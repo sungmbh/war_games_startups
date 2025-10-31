@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CES 2026 Deal Sprint - Startup Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Primary brand colors */
+            --primary: #0066FF;
+            --secondary: #00D9FF;
+            --accent: #FF3D71;
+            --success: #00E676;
+            --warning: #FFB300;
+
+            /* Light Theme */
+            --bg-dark: #F4F7FA;       /* Main page background */
+            --bg-card: #FFFFFF;       /* Card background */
+            --bg-elevated: #F9FAFB;   /* Inner elements, light hover */
+            --text-primary: #1F2937;   /* Dark text (headings, main) */
+            --text-secondary: #4B5563; /* Medium text (body, descriptions) */
+            --text-muted: #6B7A94;     /* Lighter text (labels) */
+            --border: #E5E7EB;       /* Light borders */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(244, 247, 250, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: -0.25rem;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 88px;
+            z-index: 999;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-tabs-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 2rem;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            padding: 1.25rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-button:hover {
+            color: var(--text-primary);
+            background: rgba(0, 102, 255, 0.05);
+        }
+
+        .tab-button.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 30px rgba(0, 102, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .card-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-item {
+            background: var(--bg-elevated);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .info-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-value {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        /* Decision Matrix */
+        .decision-matrix {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .decision-option {
+            background: var(--bg-elevated);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .decision-option.success {
+            border-left: 4px solid var(--success);
+        }
+
+        .decision-option.warning {
+            border-left: 4px solid var(--warning);
+        }
+
+        .decision-option.danger {
+            border-left: 4px solid var(--accent);
+        }
+
+        .decision-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .decision-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .decision-payout {
+            background: linear-gradient(135deg, var(--success), #00C853);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .decision-criteria {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .decision-examples {
+            background: rgba(0, 102, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .decision-examples strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cost {
+            background: linear-gradient(135deg, var(--accent), #D50000);
+            color: white;
+        }
+
+        /* Quick Reference */
+        .quick-ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .quick-ref-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .quick-ref-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.1);
+        }
+
+        .quick-ref-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* UPDATED: Renamed mentor-link to buyer-link */
+        .buyer-link {
+            font-size: 1.3rem; /* Match buyer name size */
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+        .buyer-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        .buyer-link-no-url {
+            font-size: 1.3rem;
+            color: var(--text-primary); /* Non-clickable name */
+            font-weight: 700;
+        }
+
+
+        .quick-ref-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        /* Style for buyer links in quick ref */
+        .quick-ref-content a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .quick-ref-content a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Contact Cards */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-email {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        .contact-email a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-email a:hover {
+            text-decoration: underline;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 1.25rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 4px solid;
+        }
+
+        .alert-info {
+            background: rgba(0, 102, 255, 0.05);
+            border-color: var(--primary);
+            color: var(--text-secondary);
+        }
+
+        .alert-warning {
+            background: rgba(255, 179, 0, 0.05);
+            border-color: var(--warning);
+            color: var(--text-secondary);
+        }
+
+        .alert-success {
+            background: rgba(0, 230, 118, 0.05);
+            border-color: var(--success);
+            color: var(--text-secondary);
+        }
+
+        .alert-danger {
+            background: rgba(255, 61, 113, 0.05);
+            border-color: var(--accent);
+            color: var(--text-secondary);
+        }
+        
+        .alert-info strong { color: var(--primary); }
+        .alert-warning strong { color: var(--warning); }
+        .alert-success strong { color: var(--success); }
+        .alert-danger strong { color: var(--accent); }
+
+        .alert strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Lists */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .styled-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .styled-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Custom list styles for How to Win */
+        .styled-list.earn li::before {
+            content: '✅';
+            color: var(--success);
+        }
+        .styled-list.spend li::before {
+            content: '❌';
+            color: var(--accent);
+        }
+
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table th {
+            background: var(--bg-elevated);
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        
+        /* UPDATED: Renamed mentor-name-link to buyer-name-link */
+        .data-table .buyer-name-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .data-table .buyer-name-link:hover {
+            text-decoration: underline;
+        }
+        .data-table .buyer-name-no-link {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover td {
+            background: rgba(0, 102, 255, 0.02);
+        }
+
+        /* Flowchart Visualization Styles */
+        .flow-container {
+            padding: 1rem;
+            max-width: 800px;
+            margin: 1rem auto;
+        }
+        .flow-step {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+        .flow-step strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        .flow-step p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .flow-step .payout {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .flow-step .payout.earn {
+            color: var(--success);
+        }
+        .flow-step .payout.spend {
+            color: var(--accent);
+        }
+        /* Clickable links in flowchart */
+        .flow-step .tab-link {
+            color: var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .flow-step .tab-link:hover {
+            text-decoration: underline;
+        }
+
+        .flow-step.start {
+            border-color: var(--success);
+            background: rgba(0, 230, 118, 0.05);
+        }
+        .flow-step.gate {
+            border-color: var(--primary);
+            background: rgba(0, 102, 255, 0.03);
+        }
+        .flow-step.decision {
+            border-color: var(--warning);
+            background: rgba(255, 179, 0, 0.05);
+        }
+        .flow-step.end {
+            border-color: var(--accent);
+            background: rgba(255, 61, 113, 0.05);
+        }
+
+        .flow-arrow {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        
+        .flow-path-split {
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        .flow-path {
+            background: var(--bg-elevated);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .flow-path-divider {
+            background: var(--border);
+            width: 1px;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .flow-path-divider::before {
+            content: 'OR';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--bg-card);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+        }
+        
+        /* Pitch Matcher Visual */
+        .pitch-matcher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .pitch-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .pitch-card .icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+        .pitch-card .if-you-are {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-top: 0.75rem;
+        }
+        .pitch-card .pitch-to {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        /* UPDATED: Renamed mentor-name to buyer-name */
+        .pitch-card .buyer-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 0.75rem;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .pitch-card .buyer-name:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            /* Mobile header/nav fix */
+            .header {
+                position: static; /* Unstick header */
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                padding-bottom: 0.5rem; /* Add space for nav */
+            }
+            .nav-tabs {
+                top: 0; /* Stick nav tabs to top on mobile */
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            .nav-tabs-inner {
+                padding: 0 1rem;
+            }
+            .tab-button {
+                padding: 1rem;
+                font-size: 0.85rem;
+            }
+            .info-grid,
+            .quick-ref-grid,
+            .contact-grid,
+            .pitch-matcher-grid {
+                grid-template-columns: 1fr;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            /* Two column grid for how-to-win */
+            .how-to-win-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .flow-path-split {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .flow-path-divider {
+                display: none; /* Hide OR divider on mobile */
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-elevated);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <div class="header-title">CES 2026 Deal Sprint</div>
+                    <div class="header-subtitle">Startup Command Center</div>
+                </div>
+            </div>
+            </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <div class="nav-tabs-inner">
+            <button class="tab-button active" id="btn-overview" onclick="showTab('overview', this)">🎯 Overview & Rules</button>
+            <button class="tab-button" id="btn-schedule" onclick="showTab('schedule', this)">📅 Your Schedule</button>
+            <button class="tab-button" id="btn-gates" onclick="showTab('gates', this)">🚪 The 3 Gates</button>
+            <button class="tab-button" id="btn-buyers" onclick="showTab('buyers', this)">👥 Buyer Directory</button>
+            <button class="tab-button" id="btn-winning" onclick="showTab('winning', this)">💰 How to Win</button>
+            <button class="tab-button" id="btn-quickref" onclick="showTab('quickref', this)">⚡ Quick Guide</button>
+            <button class="tab-button" id="btn-contacts" onclick="showTab('contacts', this)">📞 Contacts</button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <div id="overview" class="tab-content active">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🎯</div>
+                    <div>
+                        <div class="card-title">Your Mission: Sell, Don't Just Pitch</div>
+                        <div class="card-subtitle">This is a simulation to practice closing real deals for CES.</div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <strong>Your Goal:</strong> Finish with the most cash by 3:30 PM.
+                </div>
+                <div class="alert alert-success">
+                    <strong>Starting Bankroll:</strong> You begin with <strong>$10,000</strong> in fake currency.
+                </div>
+                
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 1rem;">
+                    Your goal is to propose a **real transaction** to the **buyers**. They are not judges; they are acting as potential **customers, partners, or acquirers**. You must convince them to "buy" what you are "selling."
+                </p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🧠</div>
+                    <div>
+                        <div class="card-title">Who Should I Pitch?</div>
+                        <div class="card-subtitle">Match your company type to the right buyer.</div>
+                    </div>
+                </div>
+                <div class="pitch-matcher-grid">
+                    <div class="pitch-card">
+                        <div class="icon">💰</div>
+                        <div class="if-you-are">Raising Seed/Series A</div>
+                        <div class="pitch-to">Pitch an <strong>Equity Investment</strong> to:</div>
+                        <a class="buyer-name" onclick="goToTab('buyers')">Johnny Yu</a>
+                    </div>
+                    <div class="pitch-card">
+                        <div class="icon">🏭</div>
+                        <div class="if-you-are">Selling Components (Hardware)</div>
+                        <div class="pitch-to">Pitch a <strong>Supplier Partnership</strong> to:</div>
+                        <a class="buyer-name" onclick="goToTab('buyers')">Dr. Volker Kaese</a>
+                    </div>
+                    <div class="pitch-card">
+                        <div class="icon">📈</div>
+                        <div class="if-you-are">Seeking Acquisition</div>
+                        <div class="pitch-to">Pitch an <strong>M&A Deal</strong> to:</div>
+                        <a class="buyer-name" onclick="goToTab('buyers')">Ashley Hsueh</a>
+                        <a class="buyer-name" onclick="goToTab('buyers')">Chander Kant</a>
+                    </div>
+                    <div class="pitch-card">
+                        <div class="icon">🧪</div>
+                        <div class="if-you-are">Testing a New Technology</div>
+                        <div class="pitch-to">Pitch a <strong>Pilot / POC</strong> to:</div>
+                        <a class="buyer-name" onclick="goToTab('buyers')">Deborah Magid</a>
+                    </div>
+                    <div class="pitch-card">
+                        <div class="icon">💻</div>
+                        <div class="if-you-are">Selling SaaS / Software</div>
+                        <div class="pitch-to">Pitch an <strong>Ops Purchase</strong> to:</div>
+                        <a class="buyer-name" onclick="goToTab('buyers')">Shafeen Charania</a>
+                    </div>
+                    <div class="pitch-card">
+                        <div class="icon">🤝</div>
+                        <div class="if-you-are">Looking for Channel Sales</div>
+                        <div class="pitch-to">Pitch a <strong>Co-Marketing Deal</strong> to:</div>
+                        <a class="buyer-name" onclick="goToTab('buyers')">Josh Fu</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🗺️</div>
+                    <div>
+                        <div class="card-title">Your Journey: A Visual Guide</div>
+                        <div class="card-subtitle">This is the path from start to finish.</div>
+                    </div>
+                </div>
+
+                <div class="flow-container">
+                    <div class="flow-step start">
+                        <strong>START (08:30 AM)</strong>
+                        <p class="payout earn">Receive $10,000 Bankroll</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">
+                        <strong>BUILD LIST (10:00 AM)</strong>
+                        <p>Build 20-person customer list.</p>
+                        <p class="payout earn"><strong>Exceptional = +$1,000</strong></p>
+                        <p class="payout spend"><strong>Incomplete = -$1,000</strong></p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step decision">
+                        <strong>SEND EMAIL (11:30 AM)</strong>
+                        <p>Send <strong>1 email</strong> to <strong>1 buyer</strong>.</p>
+                        <p class="payout spend">Include Bid: -$2,000 to -$5,000</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-path-split">
+                        <div class="flow-path">
+                            <strong>✅ Accepted by Buyer</strong>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">(Proceed to Gate 1)</p>
+                        </div>
+                        <div class="flow-path-divider"></div>
+                        <div class="flow-path">
+                            <strong>❌ Not Accepted</strong>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">(Enter Overflow Draw, then <strong>$5k Buyback</strong> option)</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step gate">
+                        <strong><a class="tab-link" onclick="goToTab('gates')">GATE 1 (12:15 PM)</a></strong>
+                        <p>10-min pitch. Get "Interested" or "Pass".</p>
+                        <p class="payout earn"><strong>Payout: +$3,000</strong> (if Interested) or $0</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step gate">
+                        <strong><a class="tab-link" onclick="goToTab('gates')">GATE 2 (1:50 PM)</a></strong>
+                        <p>20-min deep dive. Get "Strong," "Decent," or "Weak".</p>
+                        <p class="payout spend"><strong>Cost: -$2,000 to enter</strong></p>
+                        <p class="payout earn"><strong>Payout: +$8,000, +$5,000, or $0</strong></p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-path-split">
+                        <div class="flow-path">
+                            <strong>✅ Advance to Gate 3</strong>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">(Buyer selects top 2 teams)</p>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step gate">
+                                <strong><a class="tab-link" onclick="goToTab('gates')">GATE 3 (3:00 PM)</a></strong>
+                                <p>20-min negotiation. Get "Deal," "Conditional," or "No Deal".</p>
+                                <p class="payout spend"><strong>Cost: -$3,000 to enter</strong></p>
+                                <p class="payout earn"><strong>Payout: +$15,000, +$10,000, or $0</strong></p>
+                            </div>
+                        </div>
+                        <div class="flow-path-divider"></div>
+                        <div class="flow-path">
+                            <strong>❌ Eliminated at Gate 2</strong>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">(Did not advance)</p>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step end">
+                                <strong>HOT SEAT (3:00 PM)</strong>
+                                <p>30-second pitch to <a class="tab-link" onclick="goToTab('contacts')">Ken Huang</a>.</p>
+                                <p class="payout earn"><strong>1 Winner: +$8,000</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step start">
+                        <strong>FINISH (3:20 PM)</strong>
+                        <p>Final cash count. Winner announced!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📜</div>
+                    <div>
+                        <div class="card-title">Key Rules & Resources</div>
+                        <div class="card-subtitle">Understand these 3 key mechanisms.</div>
+                    </div>
+                </div>
+
+                <div class="quick-ref-grid">
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-title">🛡️ The War Room (with Ken Huang)</div>
+                        <div class="quick-ref-content">
+                            Get paid strategic consulting. Ken has 7+ years of deal sourcing experience. Use him to build your target list, write your email, or prep for negotiations.
+                            <ul style="margin-top: 1rem;">
+                                <li><strong>Morning Session (10:00-12:00):</strong> <strong style="color: var(--accent);">$1,000</strong></li>
+                                <li><strong>Afternoon Session (13:50-14:50):</strong> <strong style="color: var(--accent);">$1,000 - $2,000</strong></li>
+                            </ul>
+                            (Find <a class="tab-link" onclick="goToTab('contacts')">Ken</a> at the War Room station)
+                        </div>
+                    </div>
+                    
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-title">🔄 Overflow & Buyback</div>
+                        <div class="quick-ref-content">
+                            If your email bid isn't accepted, you'll enter a random "Overflow Draw." If you're one of the 2 teams still left out, you get one chance:
+                            <br><br>
+                            <strong>Pay <span style="color: var(--accent);">$5,000</span> (half your bankroll)</strong> within 60 seconds to "buy back" into the game.
+                        </div>
+                    </div>
+
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-title">🔥 Hot Seat Challenge</div>
+                        <div class="quick-ref-content">
+                            If you are eliminated at Gate 2, you have one last chance. You get **30 seconds** to pitch <a class="tab-link" onclick="goToTab('contacts')">Ken Huang</a>. The single best pitch wins a final <strong style="color: var(--success);">$8,000</strong> cash.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="schedule" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📅</div>
+                    <div>
+                        <div class="card-title">Your Complete Agenda</div>
+                        <div class="card-subtitle">Follow this timeline to stay on track.</div>
+                    </div>
+                </div>
+                
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Activity</th>
+                                <th>Your Task</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>08:30-09:00</td>
+                                <td>Check-in</td>
+                                <td>Get your <strong>$10,000 bankroll</strong> & handouts.</td>
+                                <td>Lobby</td>
+                            </tr>
+                            <tr>
+                                <td>09:00-09:30</td>
+                                <td>Opening</td>
+                                <td>Learn the rules and day structure.</td>
+                                <td>Main Room</td>
+                            </tr>
+                            <tr>
+                                <td>09:30-10:00</td>
+                                <td>Lecture</td>
+                                <td>Learn how to build customer lists.</td>
+                                <td>Main Room</td>
+                            </tr>
+                            <tr>
+                                <td>10:00-10:45</td>
+                                <td>Research + War Room</td>
+                                <td>Build your 20-person list. Visit Ken for strategy (<strong>$1k</strong>).</td>
+                                <td>Your Table</td>
+                            </tr>
+                            <tr>
+                                <td>10:45-11:15</td>
+                                <td>Customer List Review</td>
+                                <td><strong>Upload list by 10:45!</strong> (Earn <strong>+$1k</strong> or lose <strong>-$1k</strong>).</td>
+                                <td>Your Table</td>
+                            </tr>
+                            <tr>
+                                <td>11:15-11:30</td>
+                                <td>Email Prep</td>
+                                <td>Draft <strong>ONE</strong> cold email + bid (<strong>$2k-$5k</strong>).</td>
+                                <td>Your Table</td>
+                            </tr>
+                            <tr>
+                                <td>11:30-11:35</td>
+                                <td>Auction Opens</td>
+                                <td><strong>Send ONE email to ONE buyer.</strong></td>
+                                <td>Your Table</td>
+                            </tr>
+                            <tr>
+                                <td>11:55-12:15</td>
+                                <td>Overflow Draw + Buyback</td>
+                                <td>Not picked? Get drawn randomly or pay <strong>$5k</strong> to buy back in.</td>
+                                <td>Main Room</td>
+                            </tr>
+                            <tr>
+                                <td>12:15-12:50</td>
+                                <td><a class="tab-link" onclick="goToTab('gates')">Gate-1 Meetings</a></td>
+                                <td>10-min pitch. Get "Interested" (<strong>+$3k</strong>) or "Pass" (<strong>$0</strong>).</td>
+                                <td>Meeting Rooms</td>
+                            </tr>
+                            <tr>
+                                <td>12:50-13:50</td>
+                                <td>Lunch + Checkpoint 1</td>
+                                <td>Count your cash. Leaderboard goes live.</td>
+                                <td>Dining Area</td>
+                            </tr>
+                            <tr>
+                                <td>13:50-14:50</td>
+                                <td><a class="tab-link" onclick="goToTab('gates')">Gate-2 Meetings</a></td>
+                                <td><strong>Pay $2k.</strong> 20-min Q&A. Earn <strong>$8k, $5k,</strong> or <strong>$0</strong>.</td>
+                                <td>Meeting Rooms</td>
+                            </tr>
+                            <tr>
+                                <td>14:50-14:55</td>
+                                <td>Gate-2 Results</td>
+                                <td>Buyer announces who advances to Gate 3.</td>
+                                <td>Meeting Rooms</td>
+                            </tr>
+                            <tr>
+                                <td>15:00-15:20</td>
+                                <td><a class="tab-link" onclick="goToTab('gates')">Gate-3 Meetings</a></td>
+                                <td><strong>Pay $3k.</strong> 20-min negotiation. Earn <strong>$15k, $10k,</strong> or <strong>$0</strong>.</td>
+                                <td>Meeting Rooms</td>
+                            </tr>
+                            <tr>
+                                <td>15:00-15:20</td>
+                                <td><a class="tab-link" onclick="goToTab('overview')">Hot Seat Challenge</a></td>
+                                <td>Eliminated? 30-sec pitch to Ken for <strong>$8k</strong>.</td>
+                                <td>Main Room</td>
+                            </tr>
+                            <tr>
+                                <td>15:20-15:30</td>
+                                <td>Final Count</td>
+                                <td>Winner is declared!</td>
+                                <td>Main Room</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div id="gates" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🚪</div>
+                    <div>
+                        <div class="card-title">Gate 1: Discovery (10 min)</div>
+                        <div class="card-subtitle">Your goal is to get a second meeting.</div>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;">What to Prepare (5-7 min):</h4>
+                <ul class="styled-list">
+                    <li><strong>Problem:</strong> What pain are you solving? Who feels it?</li>
+                    <li><strong>Solution:</strong> What do you do? How does it work?</li>
+                    <li><strong>Traction:</strong> What proof do you have? (customers, revenue, pilots)</li>
+                    <li><strong>Transaction:</strong> What are you proposing to <a class="tab-link" onclick="goToTab('buyers')">THIS buyer</a> specifically?</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;">Your Potential Payouts:</h4>
+                <div class="decision-matrix">
+                    <div class="decision-option success">
+                        <div class="decision-header">
+                            <div class="decision-title">✅ INTERESTED</div>
+                            <div class="decision-payout">+$3,000</div>
+                        </div>
+                        <div class="decision-criteria">
+                            <strong>Meaning:</strong> "I want to see more." You advance to Gate 2 with this buyer.
+                        </div>
+                    </div>
+
+                    <div class="decision-option danger">
+                        <div class="decision-header">
+                            <div class="decision-title">❌ PASS</div>
+                            <div class="decision-payout cost">$0</div>
+                        </div>
+                        <div class="decision-criteria">
+                            <strong>Meaning:</strong> "Not a fit for me." You are eliminated (but can try the <a class="tab-link" onclick="goToTab('overview')">Hot Seat Challenge</a>).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔍</div>
+                    <div>
+                        <div class="card-title">Gate 2: Qualification (20 min)</div>
+                        <div class="card-subtitle">Your goal is to prove your business model.</div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-danger">
+                    <strong>Entry Cost:</strong> You must <strong>PAY $2,000</strong> to enter this meeting. (See <a class="tab-link" onclick="goToTab('winning')">How to Win</a>)
+                </div>
+
+                <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;">What to Prepare (8-10 min):</h4>
+                <ul class="styled-list">
+                    <li><strong>Traction Deep Dive:</strong> Who are your customers? What is your revenue? Show metrics.</li>
+                    <li><strong>Business Model:</strong> Unit economics (CAC, LTV), pricing, path to profitability.</li>
+                    <li><strong>Proof of Scale:</strong> Your GTM strategy, sales pipeline, and partnerships.</li>
+                    <li><strong>Transaction Specifics:</strong> The exact proposal, terms, and timeline.</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;">Your Potential Payouts:</h4>
+                <p>At <strong>2:50 PM</strong>, your buyer will select their <strong>top 2 teams</strong> to advance. Your payout is based on their rating of your pitch.</p>
+                <div class="decision-matrix">
+                    <div class="decision-option success">
+                        <div class="decision-header">
+                            <div class="decision-title">💪 STRONG</div>
+                            <div class="decision-payout">+$8,000</div>
+                        </div>
+                        <div class="decision-criteria">
+                            <strong>Meaning:</strong> "Clear proof." High chance to be picked for Gate 3.
+                        </div>
+                    </div>
+                    <div class="decision-option warning">
+                        <div class="decision-header">
+                            <div class="decision-title">👍 DECENT</div>
+                            <div class="decision-payout" style="background: linear-gradient(135deg, var(--warning), #FF8F00);">+$5,000</div>
+                        </div>
+                        <div class="decision-criteria">
+                            <strong>Meaning:</strong> "Interesting, but needs work." Medium chance to be picked.
+                        </div>
+                    </div>
+                    <div class="decision-option danger">
+                        <div class="decision-header">
+                            <div class="decision-title">❌ WEAK</div>
+                            <div class="decision-payout cost">$0</div>
+                        </div>
+                        <div class="decision-criteria">
+                            <strong>Meaning:</strong> "Not ready." You will not advance to Gate 3.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🤝</div>
+                    <div>
+                        <div class="card-title">Gate 3: Negotiation (20 min)</div>
+                        <div class="card-subtitle">Your goal is to close the deal.</div>
+                    </div>
+                </div>
+
+                <div class="alert alert-danger">
+                    <strong>Entry Cost:</strong> You must <strong>PAY $3,000</strong> to enter this meeting. (See <a class="tab-link" onclick="goToTab('winning')">How to Win</a>)
+                </div>
+
+                <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;">What to Prepare (10 min):</h4>
+                <ul class="styled-list">
+                    <li><strong>Deal Summary:</strong> The exact transaction, key terms, and structure.</li>
+                    <li><strong>Why Now:</strong> Urgency, momentum, and timing.</li>
+                    <li><strong>Value Proposition:</strong> The financial returns or strategic benefits for the buyer.</li>
+                    <li><strong>Next Steps:</strong> Timeline, dependencies, and conditions to close.</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;">Your Potential Payouts:</h4>
+                <div class="decision-matrix">
+                    <div class="decision-option success">
+                        <div class="decision-header">
+                            <div class="decision-title">🚀 DEAL</div>
+                            <div class="decision-payout">+$15,000</div>
+                        </div>
+                        <div class="decision-criteria">
+                            <strong>Meaning:</strong> "I would sign this today."
+                        </div>
+                    </div>
+                    <div class="decision-option warning">
+                        <div class="decision-header">
+                            <div class="decision-title">⚠️ CONDITIONAL</div>
+                            <div class="decision-payout" style="background: linear-gradient(135deg, var(--warning), #FF8F00);">+$10,000</div>
+                        </div>
+                        <div class="decision-criteria">
+                            <strong>Meaning:</strong> "I would move forward IF specific conditions are met."
+                        </div>
+                    </div>
+                    <div class="decision-option danger">
+                        <div class="decision-header">
+                            <div class="decision-title">❌ NO DEAL</div>
+                            <div class="decision-payout cost">$0</div>
+                        </div>
+                        <div class="decision-criteria">
+                            <strong>Meaning:</strong> "Not ready to commit, even with conditions."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="buyers" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">👥</div>
+                    <div>
+                        <div class="card-title">Buyer Directory: Who to Sell To</div>
+                        <div class="card-subtitle">Click a buyer's name to see their LinkedIn profile.</div>
+                    </div>
+                </div>
+                
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Buyer</th>
+                                <th>Functional Role</th>
+                                <th>What to Propose (The Transaction)</th>
+                                <th>Gate 1 Cap</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="https://www.linkedin.com/in/johnny-yu-21b36128/" target="_blank" rel="noopener noreferrer" class="buyer-name-link">Johnny Yu ↗</a></td>
+                                <td>CVC / Investment</td>
+                                <td>Equity investment, Series A funding</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.linkedin.com/in/volkerkaese/" target="_blank" rel="noopener noreferrer" class="buyer-name-link">Dr. Volker Kaese ↗</a></td>
+                                <td>Supply Chain / Procurement</td>
+                                <td>Supplier partnership, component supply</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.linkedin.com/in/ashleyhsueh/" target="_blank" rel="noopener noreferrer" class="buyer-name-link">Ashley Hsueh ↗</a></td>
+                                <td>Corporate Development / M&A</td>
+                                <td>Acquisition, strategic M&A</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.linkedin.com/in/deborah-magid-b5318/" target="_blank" rel="noopener noreferrer" class="buyer-name-link">Deborah Magid ↗</a></td>
+                                <td>Innovation Scout / POC</td>
+                                <td>Pilot program, proof-of-concept</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.linkedin.com/in/shafeen/" target="_blank" rel="noopener noreferrer" class="buyer-name-link">Shafeen Charania ↗</a></td>
+                                <td>Operations / Tech Procurement</td>
+                                <td>SaaS tools, productivity platforms</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.linkedin.com/in/joshua-fu/" target="_blank" rel="noopener noreferrer" class="buyer-name-link">Josh Fu ↗</a></td>
+                                <td>Partnerships / Channel</td>
+                                <td>Co-marketing deal, distribution agreement</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.linkedin.com/in/chanderkant/" target="_blank" rel="noopener noreferrer" class="buyer-name-link">Chander Kant ↗</a></td>
+                                <td>Tech Partnerships / Acquirer</td>
+                                <td>Technology licensing, acquisition</td>
+                                <td>3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section-divider"></div>
+                
+                <h3 style="color: var(--text-primary); margin-bottom: 1.5rem; font-size: 1.3rem;">Buyer Deep Dives</h3>
+                
+                <div id="buyer-profile-grid" class="quick-ref-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                    </div>
+
+            </div>
+        </div>
+
+        <div id="winning" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">💰</div>
+                    <div>
+                        <div class="card-title">How to Win: The Money Model</div>
+                        <div class="card-subtitle">Your goal is to maximize earnings and minimize costs.</div>
+                    </div>
+                </div>
+
+                <div class="info-grid how-to-win-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    
+                    <div class="info-item" style="border-left-color: var(--success);">
+                        <div class="info-label" style="color: var(--success);">Ways to EARN Money</div>
+                        <ul class="styled-list earn" style="padding-left: 0;">
+                            <li style="color: var(--text-primary);"><strong>+$1,000</strong> (Exceptional Customer List)</li>
+                            <li style="color: var(--text-primary);"><strong>+$3,000</strong> (<a class="tab-link" onclick="goToTab('gates')">Gate-1 "Interested"</a>)</li>
+                            <li style="color: var(--text-primary);"><strong>+$5,000</strong> (<a class="tab-link" onclick="goToTab('gates')">Gate-2 "Decent"</a>)</li>
+                            <li style="color: var(--text-primary);"><strong>+$8,000</strong> (<a class="tab-link" onclick="goToTab('gates')">Gate-2 "Strong"</a>)</li>
+                            <li style="color: var(--text-primary);"><strong>+$8,000</strong> (<a class="tab-link" onclick="goToTab('overview')">Hot Seat Challenge Winner</a>)</li>
+                            <li style="color: var(--text-primary);"><strong>+$10,000</strong> (<a class="tab-link" onclick="goToTab('gates')">Gate-3 "Conditional Deal"</a>)</li>
+                            <li style="color: var(--text-primary);"><strong>+$15,000</strong> (<a class="tab-link" onclick="goToTab('gates')">Gate-3 "Deal"</a>)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-item" style="border-left-color: var(--accent);">
+                        <div class="info-label" style="color: var(--accent);">Ways to SPEND Money</div>
+                        <ul class="styled-list spend" style="padding-left: 0;">
+                            <li style="color: var(--text-primary);"><strong>-$1,000</strong> (Incomplete Customer List)</li>
+                            <li style="color: var(--text-primary);"><strong>-$1,000</strong> (<a class="tab-link" onclick="goToTab('overview')">War Room</a> - AM)</li>
+                            <li style="color: var(--text-primary);"><strong>-$2,000</strong> (<a class="tab-link" onclick="goToTab('gates')">Gate-2 Entry Fee</a>)</li>
+                            <li style="color: var(--text-primary);"><strong>-$1k to $2k</strong> (<a class="tab-link" onclick="goToTab('overview')">War Room</a> - PM)</li>
+                            <li style="color: var(--text-primary);"><strong>-$2k to $5k</strong> (Gate-1 Email Bid)</li>
+                            <li style="color: var(--text-primary);"><strong>-$3,000</strong> (<a class="tab-link" onclick="goToTab('gates')">Gate-3 Entry Fee</a>)</li>
+                            <li style="color: var(--text-primary);"><strong>-$5,000</strong> (<a class="tab-link" onclick="goToTab('overview')">Gate-1 Buyback</a>)</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div id="quickref" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⚡</div>
+                    <div>
+                        <div class="card-title">Startup Quick Reference Guide</div>
+                        <div class="card-subtitle">The entire day, summarized.</div>
+                    </div>
+                </div>
+
+                <div class="quick-ref-grid">
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-title">🎯 Your Mission</div>
+                        <div class="quick-ref-content">
+                            You're SELLING or PARTNERING. Propose a real transaction to a <strong>buyer</strong>, partner, or acquirer.
+                        </div>
+                    </div>
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-title">💰 Money Tips</div>
+                        <div class="quick-ref-content">
+                            <strong>Start:</strong> <span style="color: var(--success);">$10,000</span><br>
+                            <strong>Earn:</strong> Exceptional List (<strong>+$1k</strong>), Gates (<strong>+$3k</strong> to <strong>+$15k</strong>), Hot Seat (<strong>+$8k</strong>)<br>
+                            <strong>Spend:</strong> War Room (<strong>-$1k</strong>), Bids (<strong>-$2k</strong>+), Gate Entries (<strong>-$2k, -$3k</strong>), Buyback (<strong>-$5k</strong>)
+                        </div>
+                    </div>
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-title">🛡️ War Room (Ken Huang)</div>
+                        <div class="quick-ref-content">
+                            Get 1-on-1 strategy help. Use it for targeting, email writing, or negotiation prep.
+                            <br><strong>AM: <span style="color: var(--accent);">$1,000</span></strong> | <strong>PM: <span style="color: var(--accent);">$1k-$2k</span></strong>
+                            (Find <a class="tab-link" onclick="goToTab('contacts')">Ken</a> in the War Room)
+                        </div>
+                    </div>
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-title">⏰ Key Deadlines</div>
+                        <div class="quick-ref-content">
+                            <strong>10:45 AM:</strong> Customer List MUST be uploaded to G-Drive.<br>
+                            <strong>11:30 AM:</strong> <strong>ONE email</strong> to <strong>ONE buyer</strong> must be sent.<br>
+                            <strong>14:50 PM:</strong> Gate 2 results announced.
+                        </div>
+                    </div>
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-title">👥 Buyer Quick Directory</div>
+                        <div class="quick-ref-content" style="line-height: 2;">
+                            <strong><a href="https://www.linkedin.com/in/johnny-yu-21b36128/" target="_blank" rel="noopener noreferrer">Johnny ↗:</a></strong> Investment (Equity)<br>
+                            <strong><a href="https://www.linkedin.com/in/volkerkaese/" target="_blank" rel="noopener noreferrer">Volker ↗:</a></strong> Supply Chain (Supplier Deal)<br>
+                            <strong><a href="https://www.linkedin.com/in/ashleyhsueh/" target="_blank" rel="noopener noreferrer">Ashley ↗:</a></strong> M&A (Acquisition)<br>
+                            <strong><a href="https://www.linkedin.com/in/deborah-magid-b5318/" target="_blank" rel="noopener noreferrer">Deborah ↗:</a></strong> Innovation (Pilot/POC)<br>
+                            <strong><a href="https://www.linkedin.com/in/shafeen/" target="_blank" rel="noopener noreferrer">Shafeen ↗:</a></strong> Operations (SaaS Purchase)<br>
+                            <strong><a href="https://www.linkedin.com/in/joshua-fu/" target="_blank" rel="noopener noreferrer">Josh ↗:</a></strong> Partnerships (Co-marketing)<br>
+                            <strong><a href="https://www.linkedin.com/in/chanderkant/" target="_blank" rel="noopener noreferrer">Chander ↗:</a></strong> Tech (Licensing/Acquisition)
+                        </div>
+                    </div>
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-title">📞 Key Contacts</div>
+                        <div class="quick-ref-content">
+                            <strong>Kyle:</strong> Scoring & Leaderboard<br>
+                            <strong>Jade:</strong> Cash, Payments, G-Drive Links<br>
+                            <strong>Volker H:</strong> MC & Rules
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contacts" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📞</div>
+                    <div>
+                        <div class="card-title">Operations Team Contacts</div>
+                        <div class="card-subtitle">Your support crew for the day.</div>
+                    </div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-role">Scorekeeper</div>
+                        <div class="contact-name">Kyle</div>
+                        <div class="contact-email"><a href="mailto:yh@mvl.biz">yh@mvl.biz</a></div>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Leaderboard updates, timing questions, slot tracking</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-role">Operations / Cash</div>
+                        <div class="contact-name">Jade</div>
+                        <div class="contact-email"><a href="mailto:jc@mvl.biz">jc@mvl.biz</a></div>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Cash distribution, all payments, fees, G-Drive links</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-role">MC / Rules</div>
+                        <div class="contact-name">Volker H.</div>
+                        <div class="contact-email"><a href="mailto:vh@mvl.biz">vh@mvl.biz</a></div>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Event coordination, rules clarification, announcements</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-role">War Room / Hot Seat</div>
+                        <div class="contact-name">Ken Huang</div>
+                        <div class="contact-email"><a href="mailto:ken@mvl.biz">ken@mvl.biz</a></div>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Strategic consulting, Hot Seat judge</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // UPDATED: Renamed mentorData to buyerData
+        const buyerData = {
+            johnny: {
+                name: "Johnny Yu",
+                role: "CVC / Investment",
+                org: "Mosaic Venture Lab",
+                linkedIn: "https://www.linkedin.com/in/johnny-yu-21b36128/", // UPDATED
+                roleDescription: "Equity stakes in startups that fit strategic portfolio themes",
+                expertise: "Semiconductors, smart mobility, biotech, venture capital",
+                whatToPropose: [
+                    "We're raising Series A. Here's our traction and unit economics.",
+                    "We seek a strategic investment to fit Mosaic's mobility portfolio.",
+                    "We need cross-border capital to expand from Taiwan to the US.",
+                    "We are proposing an equity deal with a clear exit potential."
+                ]
+            },
+            volker: {
+                name: "Dr. Volker Kaese",
+                role: "Supply Chain / Procurement",
+                org: "Ingenev Mobility",
+                linkedIn: "https://www.linkedin.com/in/volkerkaese/",
+                roleDescription: "Supplier partnerships, components, manufacturing services, vendor agreements",
+                expertise: "Automotive, EV batteries, mobility, supply chain, materials",
+                whatToPropose: [
+                    "We want to be your Tier 1 supplier. Here is our pilot order proposal.",
+                    "We propose a component supply agreement for your EV applications.",
+                    "We offer manufacturing services and can prove our scalability.",
+                    "Our AI supply chain software has clear ROI; let's run a pilot."
+                ]
+            },
+            ashley: {
+                name: "Ashley Hsueh",
+                role: "Corporate Development / M&A",
+                org: "Bain & Company",
+                linkedIn: "https://www.linkedin.com/in/ashleyhsueh/",
+                roleDescription: "Acquisitions, strategic M&A deals, corporate partnerships",
+                expertise: "Technology, cloud services, performance improvement, strategy",
+                whatToPropose: [
+                    "We seek a strategic acquisition. Here is our valuation and synergy model.",
+                    "We are proposing an M&A deal to expand into North America or Asia.",
+                    "Our tech is accretive to your cloud division; let's discuss acquisition.",
+                    "We propose a corporate partnership for large enterprises."
+                ]
+            },
+            deborah: {
+                name: "Deborah Magid",
+                role: "Innovation Scout / POC",
+                org: "NextStar Venture Partners",
+                linkedIn: "https://www.linkedin.com/in/deborah-magid-b5318/",
+                roleDescription: "Pilot programs, proof-of-concept projects, technology partnerships",
+                expertise: "Enterprise software, AI, IoT, cybersecurity, sustainability",
+                whatToPropose: [
+                    "Let's run a 90-day POC with our enterprise security/AI tool.",
+                    "We propose a 6-month pilot with 3 of your corporate clients.",
+                    "Our IoT platform has a measurable ROI; let's start a pilot.",
+                    "We are looking for an innovation partnership with an enterprise."
+                ]
+            },
+            shafeen: {
+                name: "Shafeen Charania",
+                role: "Operations / Technology Procurement",
+                org: "fluency",
+                linkedIn: "https://www.linkedin.com/in/shafeen/",
+                roleDescription: "Operational SaaS tools, productivity platforms, business software, operational services",
+                expertise: "Gaming, edtech, operations, multi-country scaling, partnerships",
+                whatToPropose: [
+                    "Our SaaS tool automates HR/finance. Let's do a 3-month trial.",
+                    "This platform has a clear time/cost ROI; we want to sell it to your ops team.",
+                    "This is a workflow tool for distributed teams with existing integrations.",
+                    "We propose an operational service with 90-day ROI proof."
+                ]
+            },
+            josh: {
+                name: "Josh Fu",
+                role: "Partnerships / Channel Development",
+                org: "Akohub; Creative Ventures Lab",
+                linkedIn: "https://www.linkedin.com/in/joshua-fu/",
+                roleDescription: "Co-marketing deals, distribution agreements, channel partnerships, strategic alliances",
+                expertise: "E-commerce, Shopify, retail, marketing tech, cross-border sales",
+                whatToPropose: [
+                    "Let's do a co-marketing partnership to reach your user base.",
+                    "We propose a distribution agreement for Southeast Asia / North America.",
+                    "We want a revenue-share channel partnership in e-commerce.",
+                    "We propose a strategic alliance with clear mutual upside."
+                ]
+            },
+            chander: {
+                name: "Chander Kant",
+                role: "Technology Partnerships / Acquirer",
+                org: "K Ventures",
+                linkedIn: "https://www.linkedin.com/in/chanderkant/",
+                roleDescription: "Technology licensing, SaaS partnerships, acquisition discussions, infrastructure deals",
+                expertise: "Cloud infrastructure, SaaS, AI, security, M&A, tech due diligence",
+                whatToPropose: [
+                    "We propose a technology licensing deal for our cloud-native tech.",
+                    "We are seeking a strategic acquirer. Here is our tech stack and IP.",
+                    "Our AI/security tech has strong IP; let's discuss acquisition.",
+                    "Let's form a SaaS partnership that integrates with your infrastructure."
+                ]
+            }
+        };
+
+        // Show tab function
+        function showTab(tabName, buttonElement) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            
+            // If buttonElement is passed (from a click), use it
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            } else {
+                // If called by goToTab, find the button by id
+                document.getElementById('btn-' + tabName).classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Helper function for cross-linking tabs
+        function goToTab(tabName) {
+            // Find the button element corresponding to the tabName
+            const buttonElement = document.getElementById('btn-' + tabName);
+            if (buttonElement) {
+                showTab(tabName, buttonElement);
+            }
+        }
+
+
+        // UPDATED: Renamed populateMentorProfiles to populateBuyerProfiles
+        function populateBuyerProfiles() {
+            const grid = document.getElementById('buyer-profile-grid');
+            if (!grid) return;
+            
+            let gridHTML = '';
+            
+            for (const key in buyerData) {
+                const buyer = buyerData[key];
+                
+                // Check if LinkedIn URL exists to create a link, otherwise just display name
+                let buyerNameHTML = '';
+                if (buyer.linkedIn) {
+                    buyerNameHTML = `<a href="${buyer.linkedIn}" target="_blank" rel="noopener noreferrer" class="buyer-link">${buyer.name} ↗</a>`;
+                } else {
+                    // Even if no link, use the new class for consistent styling
+                    buyerNameHTML = `<span class="buyer-link-no-url">${buyer.name}</span>`;
+                }
+
+                gridHTML += `
+                    <div class="quick-ref-card" style="border-left: 4px solid var(--primary);">
+                        <div class="quick-ref-title">${buyerNameHTML}</div>
+                        <p style="color: var(--primary); font-weight: 600; margin-top: -1rem; margin-bottom: 1rem;">${buyer.role} (${buyer.org})</p>
+                        
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 0.5rem;">What to Propose:</strong>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">${buyer.roleDescription}.</p>
+                        
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 0.5rem;">Example Pitches:</strong>
+                        <ul class="styled-list" style="padding-left: 0;">
+                            ${buyer.whatToPropose.map(item => `<li style="font-size: 0.9rem;">${item}</li>`).join('')}
+                        </ul>
+                        
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                            <strong style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase;">Industry Expertise:</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">${buyer.expertise}</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            grid.innerHTML = gridHTML;
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            populateBuyerProfiles(); // UPDATED function name
+            // Set the active tab button on load
+            const initialButton = document.querySelector('.tab-button.active');
+            if (!initialButton) {
+                document.querySelector('.tab-button').classList.add('active');
+            }
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') {
+                const activeTab = document.querySelector('.tab-button.active');
+                const nextTab = activeTab.nextElementSibling;
+                if (nextTab) nextTab.click();
+            } else if (e.key === 'ArrowLeft') {
+                const activeTab = document.querySelector('.tab-button.active');
+                const prevTab = activeTab.previousElementSibling;
+                if (prevTab) prevTab.click();
+            }
+        });
+    </script>
+</body>
+</html>
