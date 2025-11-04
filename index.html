@@ -1,1459 +1,1461 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CES 2026 Deal Sprint - Startup Guide</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CES 2026 Deal Sprint - Startup Guide</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
-        :root {
-            /* Primary brand colors */
-            --primary: #0066FF;
-            --secondary: #00D9FF;
-            --accent: #FF3D71; /* Red/Danger */
-            --success: #00E676; /* Green/Success */
-            --warning: #FFB300; /* Orange/Caution */
+:root {
+/* Primary brand colors */
+--primary: #0066FF;
+--secondary: #00D9FF;
+--accent: #FF3D71; /* Red/Danger */
+--success: #00E676; /* Green/Success */
+--warning: #FFB300; /* Orange/Caution */
 
-            /* Modern Light Theme */
-            --bg-dark: #F4F7FA;
-            --bg-card: #FFFFFF;
-            --bg-elevated: #F9FAFB;
-            --text-primary: #1F2937;
-            --text-secondary: #4B5563;
-            --text-muted: #6B7A94;
-            --border: #E5E7EB;
-            --border-strong: #C4D3E6;
-            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.15);
-            --shadow-3d: 10px 10px 30px rgba(0, 0, 0, 0.05), -10px -10px 30px var(--bg-elevated);
-        }
+/* Modern Light Theme */
+--bg-dark: #F4F7FA;
+--bg-card: #FFFFFF;
+--bg-elevated: #F9FAFB;
+--text-primary: #1F2937;
+--text-secondary: #4B5563;
+--text-muted: #6B7A94;
+--border: #E5E7EB;
+--border-strong: #C4D3E6;
+--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+--shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
+--shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.15);
+--shadow-3d: 10px 10px 30px rgba(0, 0, 0, 0.05), -10px -10px 30px var(--bg-elevated);
+}
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
-            color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+body {
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+color: var(--text-primary);
+line-height: 1.6;
+min-height: 100vh;
+}
 
-        /* [START: STATUS BAR - HIGH-IMPACT DESIGN] */
-        .status-bar {
-            background: linear-gradient(135deg, #102C48 0%, #082038 100%);
-            color: white;
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
+/* [START: STATUS BAR - HIGH-IMPACT DESIGN] */
+.status-bar {
+background: linear-gradient(135deg, #102C48 0%, #082038 100%);
+color: white;
+padding: 1.5rem 2rem;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
 
-        .status-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.status-content {
+max-width: 1400px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 
-        .status-block {
-            text-align: center;
-            padding: 0.5rem 1rem;
-            min-width: 180px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-        }
+.status-block {
+text-align: center;
+padding: 0.5rem 1rem;
+min-width: 180px;
+border-radius: 12px;
+box-shadow: var(--shadow-sm);
+}
 
-        .status-block.main {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+.status-block.main {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
 
-        .status-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 0.25rem;
-            text-transform: uppercase;
-        }
+.status-label {
+font-size: 0.85rem;
+font-weight: 600;
+color: rgba(255, 255, 255, 0.7);
+margin-bottom: 0.25rem;
+text-transform: uppercase;
+}
 
-        .status-value {
-            font-size: 1.8rem;
-            font-family: 'SF Pro Display', sans-serif;
-            font-weight: 900;
-            line-height: 1;
-            letter-spacing: -0.5px;
-        }
+.status-value {
+font-size: 1.8rem;
+font-family: 'SF Pro Display', sans-serif;
+font-weight: 900;
+line-height: 1;
+letter-spacing: -0.5px;
+}
 
-        .bankroll {
-            background: linear-gradient(45deg, var(--success), #00C853);
-            padding: 0.75rem 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
-            transition: transform 0.2s;
-        }
-        .time-to-close {
-            background: linear-gradient(45deg, #F9A825, var(--warning));
-            padding: 0.75rem 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(255, 179, 0, 0.4);
-        }
-        /* [END: STATUS BAR - HIGH-IMPACT DESIGN] */
+.bankroll {
+background: linear-gradient(45deg, var(--success), #00C853);
+padding: 0.75rem 1.5rem;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
+transition: transform 0.2s;
+}
+.time-to-close {
+background: linear-gradient(45deg, #F9A825, var(--warning));
+padding: 0.75rem 1.5rem;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(255, 179, 0, 0.4);
+}
+/* [END: STATUS BAR - HIGH-IMPACT DESIGN] */
 
 
-        /* Navigation Tabs */
-        .nav-tabs {
-            background: var(--bg-card);
-            border-bottom: 2px solid var(--border);
-            position: sticky;
-            top: 98px;
-            z-index: 999;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            box-shadow: var(--shadow-sm);
-        }
+/* Navigation Tabs */
+.nav-tabs {
+background: var(--bg-card);
+border-bottom: 2px solid var(--border);
+position: sticky;
+top: 98px;
+z-index: 999;
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+box-shadow: var(--shadow-sm);
+}
 
-        .nav-tabs-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            padding: 0 2rem;
-        }
+.nav-tabs-inner {
+max-width: 1400px;
+margin: 0 auto;
+display: flex;
+padding: 0 2rem;
+}
 
-        .tab-button {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            padding: 1.25rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            border-bottom: 3px solid transparent;
-        }
+.tab-button {
+background: none;
+border: none;
+color: var(--text-secondary);
+padding: 1.25rem 1.5rem;
+font-size: 1rem;
+font-weight: 700;
+cursor: pointer;
+position: relative;
+transition: all 0.3s ease;
+white-space: nowrap;
+border-bottom: 3px solid transparent;
+}
 
-        .tab-button:hover {
-            color: var(--primary);
-            background: rgba(0, 102, 255, 0.05);
-        }
+.tab-button:hover {
+color: var(--primary);
+background: rgba(0, 102, 255, 0.05);
+}
 
-        .tab-button.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-            box-shadow: inset 0 -4px 0 0 var(--primary);
-        }
-        
-        /* Main Content */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+.tab-button.active {
+color: var(--primary);
+border-bottom-color: var(--primary);
+box-shadow: inset 0 -4px 0 0 var(--primary);
+}
 
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease;
-        }
+/* Main Content */
+.container {
+max-width: 1400px;
+margin: 0 auto;
+padding: 2rem;
+}
 
-        .tab-content.active {
-            display: block;
-        }
-        
-        /* Card Base Styling */
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.4s ease-out;
-            box-shadow: var(--shadow-3d);
-        }
+.tab-content {
+display: none;
+animation: fadeIn 0.4s ease;
+}
 
-        .card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 12px 25px rgba(0, 102, 255, 0.15), 0 0 0 4px rgba(0, 102, 255, 0.05);
-            transform: translateY(-4px);
-        }
+.tab-content.active {
+display: block;
+}
 
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-strong);
-        }
+/* Card Base Styling */
+.card {
+background: var(--bg-card);
+border: 1px solid var(--border);
+border-radius: 20px;
+padding: 2rem;
+margin-bottom: 1.5rem;
+transition: all 0.4s ease-out;
+box-shadow: var(--shadow-3d);
+}
 
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            box-shadow: 4px 4px 10px rgba(0, 102, 255, 0.4);
-        }
-        
-        .card-title {
-            font-size: 1.8rem;
-            font-weight: 900;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .card-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-top: 0.25rem;
-            font-weight: 500;
-        }
-        
-        /* Alert Styling */
-        .alert {
-            padding: 1.25rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-            border-left: 4px solid;
-            box-shadow: var(--shadow-sm);
-        }
-        .alert-info { background: rgba(0, 102, 255, 0.08); border-color: var(--primary); color: var(--text-primary); }
-        .alert-success { background: rgba(0, 230, 118, 0.08); border-color: var(--success); color: var(--text-primary); }
-        .alert-danger { background: rgba(255, 61, 113, 0.08); border-color: var(--accent); color: var(--text-primary); }
-        .alert strong { font-size: 1.2rem; font-weight: 800; display: block; margin-bottom: 0.5rem; }
+.card:hover {
+border-color: var(--primary);
+box-shadow: 0 12px 25px rgba(0, 102, 255, 0.15), 0 0 0 4px rgba(0, 102, 255, 0.05);
+transform: translateY(-4px);
+}
 
-        /* List styles */
-        .styled-list {
-            list-style: none;
-            padding: 0;
-        }
+.card-header {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-bottom: 1.5rem;
+padding-bottom: 1rem;
+border-bottom: 1px solid var(--border-strong);
+}
 
-        .styled-list li {
-            font-size: 1rem;
-            padding: 0.75rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--text-primary);
-            border-bottom: 1px dashed var(--border);
-        }
-        .styled-list li:last-child {
-            border-bottom: none;
-        }
+.card-icon {
+width: 48px;
+height: 48px;
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+color: white;
+box-shadow: 4px 4px 10px rgba(0, 102, 255, 0.4);
+}
 
-        /* [START: ENHANCED GAME PATH FLOWCHART] */
-        .flow-path-3d {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 1rem;
-            position: relative;
-            margin: 3rem 0;
-            padding: 0 1rem;
-        }
+.card-title {
+font-size: 1.8rem;
+font-weight: 900;
+background: linear-gradient(90deg, var(--primary), var(--secondary));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+.card-subtitle {
+font-size: 1.1rem;
+color: var(--text-secondary);
+margin-top: 0.25rem;
+font-weight: 500;
+}
 
-        .flow-path-connector-3d {
-            grid-column: 1 / span 5;
-            position: absolute;
-            top: 50%;
-            left: 5%;
-            right: 5%;
-            height: 8px;
-            background: var(--border);
-            border-radius: 4px;
-            z-index: 0;
-            transform: translateY(-50%);
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .flow-path-connector-3d::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, var(--success), var(--primary), var(--accent));
-            border-radius: 4px;
-            opacity: 0.6;
-            mix-blend-mode: overlay;
-        }
+/* Alert Styling */
+.alert {
+padding: 1.25rem;
+border-radius: 12px;
+margin: 1.5rem 0;
+border-left: 4px solid;
+box-shadow: var(--shadow-sm);
+}
+.alert-info { background: rgba(0, 102, 255, 0.08); border-color: var(--primary); color: var(--text-primary); }
+.alert-success { background: rgba(0, 230, 118, 0.08); border-color: var(--success); color: var(--text-primary); }
+.alert-danger { background: rgba(255, 61, 113, 0.08); border-color: var(--accent); color: var(--text-primary); }
+.alert strong { font-size: 1.2rem; font-weight: 800; display: block; margin-bottom: 0.5rem; }
 
-        .path-step-3d {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            padding-top: 100px;
-        }
+/* List styles */
+.styled-list {
+list-style: none;
+padding: 0;
+}
 
-        .step-icon-3d {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
-            border-radius: 50%;
-            border: 4px solid var(--border-strong);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .path-step-3d:hover .step-icon-3d {
-            transform: translateX(-50%) scale(1.1) translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
+.styled-list li {
+font-size: 1rem;
+padding: 0.75rem 0;
+padding-left: 2rem;
+position: relative;
+color: var(--text-primary);
+border-bottom: 1px dashed var(--border);
+}
+.styled-list li:last-child {
+border-bottom: none;
+}
 
-        .icon-symbol {
-            font-size: 2.5rem;
-            line-height: 1;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* [START: ENHANCED GAME PATH FLOWCHART] */
+.flow-path-3d {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+justify-content: space-between;
+align-items: flex-start;
+gap: 1rem;
+position: relative;
+margin: 3rem 0;
+padding: 0 1rem;
+}
 
-        .step-label-3d {
-            font-weight: 800;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .step-info-3d {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
+.flow-path-connector-3d {
+grid-column: 1 / span 5;
+position: absolute;
+top: 50%;
+left: 5%;
+right: 5%;
+height: 8px;
+background: var(--border);
+border-radius: 4px;
+z-index: 0;
+transform: translateY(-50%);
+box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.flow-path-connector-3d::before {
+content: '';
+position: absolute;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, var(--success), var(--primary), var(--accent));
+border-radius: 4px;
+opacity: 0.6;
+mix-blend-mode: overlay;
+}
 
-        .step-payout-3d {
-            font-size: 1rem;
-            font-weight: 900;
-            padding: 0.4rem 0.6rem;
-            border-radius: 6px;
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
-        .step-payout-3d.earn { background: var(--success); color: white; }
-        .step-payout-3d.spend { background: var(--accent); color: white; }
-        /* [END: ENHANCED GAME PATH FLOWCHART] */
+.path-step-3d {
+text-align: center;
+position: relative;
+z-index: 1;
+padding-top: 100px;
+}
 
-        /* [START: STRATEGIC RESOURCES DESIGN] */
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        .resource-card {
-            background: linear-gradient(145deg, var(--bg-card), var(--bg-elevated));
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow-3d);
-            transition: all 0.3s ease-out;
-            position: relative;
-        }
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        .resource-icon-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px dashed var(--border-strong);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .resource-card.war-room .resource-icon-title { color: var(--warning); border-color: var(--warning); }
-        .resource-card.buyback .resource-icon-title { color: var(--accent); border-color: var(--accent); }
-        .resource-card.hot-seat .resource-icon-title { color: var(--success); border-color: var(--success); }
-        .resource-detail-box {
-            background: var(--bg-card);
-            border-left: 4px solid;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-        .war-room .resource-detail-box { border-color: var(--warning); }
-        .buyback .resource-detail-box { border-color: var(--accent); }
-        .hot-seat .resource-detail-box { border-color: var(--success); }
-        /* [END: STRATEGIC RESOURCES DESIGN] */
+.step-icon-3d {
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 90px;
+height: 90px;
+background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+border-radius: 50%;
+border: 4px solid var(--border-strong);
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.path-step-3d:hover .step-icon-3d {
+transform: translateX(-50%) scale(1.1) translateY(-5px);
+border-color: var(--primary);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
 
-        /* [START: SCHEDULE TABLE ENHANCEMENT] */
-        .schedule-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            background: var(--bg-card);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-        .schedule-table th, .schedule-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-        .schedule-table th {
-            background: var(--bg-elevated);
-            color: var(--primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-        }
-        .schedule-table tr:hover td {
-            background: rgba(0, 102, 255, 0.03);
-        }
-        .task-detail {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-        }
-        .icon-small {
-            font-size: 1.1rem;
-        }
-        .critical-time {
-            color: var(--accent);
-            font-weight: 700;
-        }
-        /* [END: SCHEDULE TABLE ENHANCEMENT] */
+.icon-symbol {
+font-size: 2.5rem;
+line-height: 1;
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
 
-        /* [START: BUYER DIRECTORY CARDS] */
-        .buyer-directory-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
+.step-label-3d {
+font-weight: 800;
+color: var(--text-primary);
+margin-bottom: 0.5rem;
+font-size: 1.2rem;
+}
 
-        .buyer-card {
-            background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease-out;
-            border: 1px solid var(--border);
-        }
+.step-info-3d {
+font-size: 0.9rem;
+color: var(--text-secondary);
+}
 
-        .buyer-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--secondary);
-            box-shadow: 0 10px 20px rgba(0, 217, 255, 0.15);
-        }
+.step-payout-3d {
+font-size: 1rem;
+font-weight: 900;
+padding: 0.4rem 0.6rem;
+border-radius: 6px;
+display: inline-block;
+margin-top: 0.5rem;
+}
+.step-payout-3d.earn { background: var(--success); color: white; }
+.step-payout-3d.spend { background: var(--accent); color: white; }
+/* [END: ENHANCED GAME PATH FLOWCHART] */
 
-        .buyer-name-link-card {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        .buyer-role-card {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-        .buyer-focus-pill {
-            display: inline-block;
-            background: var(--bg-elevated);
-            color: var(--text-primary);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid var(--border);
-            margin-top: 0.75rem;
-        }
-        .buyer-card-divider {
-            height: 1px;
-            background: var(--border-strong);
-            margin: 1rem 0;
-        }
-        /* [END: BUYER DIRECTORY CARDS] */
+/* [START: STRATEGIC RESOURCES DESIGN] */
+.resource-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+.resource-card {
+background: linear-gradient(145deg, var(--bg-card), var(--bg-elevated));
+border: 1px solid var(--border);
+border-radius: 16px;
+padding: 1.5rem;
+box-shadow: var(--shadow-3d);
+transition: all 0.3s ease-out;
+position: relative;
+}
+.resource-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.resource-icon-title {
+font-size: 1.4rem;
+font-weight: 800;
+margin-bottom: 1rem;
+padding-bottom: 0.5rem;
+border-bottom: 2px dashed var(--border-strong);
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+.resource-card.war-room .resource-icon-title { color: var(--warning); border-color: var(--warning); }
+.resource-card.buyback .resource-icon-title { color: var(--accent); border-color: var(--accent); }
+.resource-card.hot-seat .resource-icon-title { color: var(--success); border-color: var(--success); }
+.resource-detail-box {
+background: var(--bg-card);
+border-left: 4px solid;
+padding: 1rem;
+border-radius: 8px;
+margin-top: 1rem;
+}
+.war-room .resource-detail-box { border-color: var(--warning); }
+.buyback .resource-detail-box { border-color: var(--accent); }
+.hot-seat .resource-detail-box { border-color: var(--success); }
+/* [END: STRATEGIC RESOURCES DESIGN] */
 
-        /* [START: GATE VISUALIZATION] */
-        .gate-flow-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .gate-step-card {
-            background: linear-gradient(145deg, var(--bg-card), var(--bg-elevated));
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 2px solid var(--border-strong);
-            transition: all 0.3s ease;
-        }
-        .gate-step-card.active-flow {
-            border-color: var(--primary);
-            box-shadow: 0 0 20px rgba(0, 102, 255, 0.1);
-        }
-        .gate-title-visual {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .gate-subtitle-visual {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-        .gate-cost-payout {
-            background: var(--bg-elevated);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-        .gate-cost-payout .cost-amount { color: var(--accent); }
-        .gate-cost-payout .payout-amount { color: var(--success); }
-        /* [END: GATE VISUALIZATION] */
+/* [START: SCHEDULE TABLE ENHANCEMENT] */
+.schedule-table {
+width: 100%;
+border-collapse: collapse;
+margin: 1.5rem 0;
+background: var(--bg-card);
+border-radius: 12px;
+overflow: hidden;
+box-shadow: var(--shadow-md);
+}
+.schedule-table th, .schedule-table td {
+padding: 1rem;
+text-align: left;
+border-bottom: 1px solid var(--border);
+}
+.schedule-table th {
+background: var(--bg-elevated);
+color: var(--primary);
+font-weight: 700;
+text-transform: uppercase;
+font-size: 0.85rem;
+letter-spacing: 0.5px;
+}
+.schedule-table tr:hover td {
+background: rgba(0, 102, 255, 0.03);
+}
+.task-detail {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-weight: 600;
+}
+.icon-small {
+font-size: 1.1rem;
+}
+.critical-time {
+color: var(--accent);
+font-weight: 700;
+}
+/* [END: SCHEDULE TABLE ENHANCEMENT] */
 
-        /* [START: HOW TO WIN MONEY FLOW GRID] */
-        .money-flow-grid-3d {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        .money-panel {
-            background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 2px solid var(--border-strong);
-            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.05);
-        }
-        .money-header {
-            font-size: 1.5rem;
-            font-weight: 800;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .money-header.earn { color: var(--success); border-color: var(--success); }
-        .money-header.spend { color: var(--accent); border-color: var(--accent); }
+/* [START: BUYER DIRECTORY CARDS] */
+.buyer-directory-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
 
-        .money-list-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px dashed var(--border);
-            font-weight: 600;
-        }
-        .money-list-item:last-child {
-            border-bottom: none;
-        }
-        .money-list-item .payout { color: var(--success); font-weight: 800; }
-        .money-list-item .cost { color: var(--accent); font-weight: 800; }
-        /* [END: HOW TO WIN MONEY FLOW GRID] */
+.buyer-card {
+background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+border-radius: 16px;
+padding: 1.5rem;
+box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.05);
+transition: all 0.3s ease-out;
+border: 1px solid var(--border);
+}
 
-        /* [START: QUICK REF OVERHAUL] */
-        .quick-ref-grid-overhaul {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr; /* Custom grid layout */
-            gap: 1.5rem;
-        }
-        .quick-ref-card-overhaul {
-            background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .quick-ref-title-overhaul {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border-strong);
-        }
-        .quick-ref-content-list li {
-            font-weight: 600;
-            padding: 0.4rem 0;
-            border-bottom: none;
-        }
-        .buyer-dir-link {
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        .buyer-dir-link:hover {
-            text-decoration: underline;
-        }
-        /* [END: QUICK REF OVERHAUL] */
+.buyer-card:hover {
+transform: translateY(-5px);
+border-color: var(--secondary);
+box-shadow: 0 10px 20px rgba(0, 217, 255, 0.15);
+}
 
-        /* Responsive */
-        @media (max-width: 1000px) {
-            .quick-ref-grid-overhaul {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        @media (max-width: 768px) {
-            .status-bar { padding: 1rem; }
-            .status-content { flex-direction: column; gap: 1rem; }
-            .status-block { min-width: 100%; }
-            .status-block.main { flex-direction: column; }
-            .nav-tabs { top: 200px; }
-            .nav-tabs-inner { padding: 0 1rem; }
-            .nav-tabs-inner button { font-size: 0.9rem; padding: 1rem 0.5rem; }
+.buyer-name-link-card {
+font-size: 1.4rem;
+font-weight: 800;
+color: var(--primary);
+text-decoration: none;
+display: block;
+margin-bottom: 0.5rem;
+}
+.buyer-role-card {
+font-size: 1rem;
+font-weight: 600;
+color: var(--text-secondary);
+margin-bottom: 1rem;
+}
+.buyer-focus-pill {
+display: inline-block;
+background: var(--bg-elevated);
+color: var(--text-primary);
+padding: 0.4rem 1rem;
+border-radius: 20px;
+font-size: 0.85rem;
+font-weight: 600;
+border: 1px solid var(--border);
+margin-top: 0.75rem;
+}
+.buyer-card-divider {
+height: 1px;
+background: var(--border-strong);
+margin: 1rem 0;
+}
+/* [END: BUYER DIRECTORY CARDS] */
 
-            .flow-path-3d { grid-template-columns: 1fr; gap: 3rem; padding: 0; }
-            .path-step-3d { padding-top: 100px; }
-            .flow-path-connector-3d { left: 50%; width: 4px; height: 95%; top: 2%; bottom: 3%; transform: translateX(-50%); }
+/* [START: GATE VISUALIZATION] */
+.gate-flow-grid {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 2rem;
+margin-top: 2rem;
+}
+.gate-step-card {
+background: linear-gradient(145deg, var(--bg-card), var(--bg-elevated));
+border-radius: 16px;
+padding: 1.5rem;
+border: 2px solid var(--border-strong);
+transition: all 0.3s ease;
+}
+.gate-step-card.active-flow {
+border-color: var(--primary);
+box-shadow: 0 0 20px rgba(0, 102, 255, 0.1);
+}
+.gate-title-visual {
+font-size: 1.6rem;
+font-weight: 900;
+color: var(--primary);
+margin-bottom: 0.5rem;
+display: flex;
+align-items: center;
+gap: 0.75rem;
+}
+.gate-subtitle-visual {
+font-size: 0.9rem;
+color: var(--text-muted);
+margin-bottom: 1rem;
+}
+.gate-cost-payout {
+background: var(--bg-elevated);
+padding: 1rem;
+border-radius: 8px;
+margin-bottom: 1rem;
+font-size: 1rem;
+font-weight: 700;
+}
+.gate-cost-payout .cost-amount { color: var(--accent); }
+.gate-cost-payout .payout-amount { color: var(--success); }
+/* [END: GATE VISUALIZATION] */
 
-            .resource-grid { grid-template-columns: 1fr; }
-            .schedule-table thead { display: none; }
-            .schedule-table tr { display: block; margin-bottom: 1rem; border: 1px solid var(--border-strong); border-radius: 8px; box-shadow: var(--shadow-sm); }
-            .schedule-table td { display: block; text-align: right; border-bottom: none; position: relative; padding-left: 50%; }
-            .schedule-table td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 0;
-                width: 45%;
-                padding-left: 10px;
-                white-space: nowrap;
-                font-weight: 700;
-                text-align: left;
-                color: var(--primary);
-            }
-            .gate-flow-grid { grid-template-columns: 1fr; }
-            .money-flow-grid-3d { grid-template-columns: 1fr; }
-            .buyer-directory-grid { grid-template-columns: 1fr; }
-            .quick-ref-grid-overhaul { grid-template-columns: 1fr; }
-        }
-    </style>
+/* [START: HOW TO WIN MONEY FLOW GRID] */
+.money-flow-grid-3d {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+}
+.money-panel {
+background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+border-radius: 16px;
+padding: 1.5rem;
+border: 2px solid var(--border-strong);
+box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.05);
+}
+.money-header {
+font-size: 1.5rem;
+font-weight: 800;
+padding-bottom: 0.5rem;
+margin-bottom: 1rem;
+border-bottom: 2px solid;
+display: flex;
+align-items: center;
+gap: 0.75rem;
+}
+.money-header.earn { color: var(--success); border-color: var(--success); }
+.money-header.spend { color: var(--accent); border-color: var(--accent); }
+
+.money-list-item {
+display: flex;
+justify-content: space-between;
+padding: 0.75rem 0;
+border-bottom: 1px dashed var(--border);
+font-weight: 600;
+}
+.money-list-item:last-child {
+border-bottom: none;
+}
+.money-list-item .payout { color: var(--success); font-weight: 800; }
+.money-list-item .cost { color: var(--accent); font-weight: 800; }
+/* [END: HOW TO WIN MONEY FLOW GRID] */
+
+/* [START: QUICK REF OVERHAUL] */
+.quick-ref-grid-overhaul {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr; /* Custom grid layout */
+gap: 1.5rem;
+}
+.quick-ref-card-overhaul {
+background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+border: 1px solid var(--border);
+border-radius: 16px;
+padding: 1.5rem;
+box-shadow: var(--shadow-sm);
+}
+.quick-ref-title-overhaul {
+font-size: 1.3rem;
+font-weight: 800;
+color: var(--primary);
+margin-bottom: 1rem;
+padding-bottom: 0.5rem;
+border-bottom: 2px solid var(--border-strong);
+}
+.quick-ref-content-list li {
+font-weight: 600;
+padding: 0.4rem 0;
+border-bottom: none;
+}
+.buyer-dir-link {
+font-weight: 700;
+color: var(--primary);
+text-decoration: none;
+}
+.buyer-dir-link:hover {
+text-decoration: underline;
+}
+/* [END: QUICK REF OVERHAUL] */
+
+/* Responsive */
+@media (max-width: 1000px) {
+.quick-ref-grid-overhaul {
+grid-template-columns: 1fr 1fr;
+}
+}
+@media (max-width: 768px) {
+.status-bar { padding: 1rem; }
+.status-content { flex-direction: column; gap: 1rem; }
+.status-block { min-width: 100%; }
+.status-block.main { flex-direction: column; }
+.nav-tabs { top: 200px; }
+.nav-tabs-inner { padding: 0 1rem; }
+.nav-tabs-inner button { font-size: 0.9rem; padding: 1rem 0.5rem; }
+
+.flow-path-3d { grid-template-columns: 1fr; gap: 3rem; padding: 0; }
+.path-step-3d { padding-top: 100px; }
+.flow-path-connector-3d { left: 50%; width: 4px; height: 95%; top: 2%; bottom: 3%; transform: translateX(-50%); }
+
+.resource-grid { grid-template-columns: 1fr; }
+.schedule-table thead { display: none; }
+.schedule-table tr { display: block; margin-bottom: 1rem; border: 1px solid var(--border-strong); border-radius: 8px; box-shadow: var(--shadow-sm); }
+.schedule-table td { display: block; text-align: right; border-bottom: none; position: relative; padding-left: 50%; }
+.schedule-table td::before {
+content: attr(data-label);
+position: absolute;
+left: 0;
+width: 45%;
+padding-left: 10px;
+white-space: nowrap;
+font-weight: 700;
+text-align: left;
+color: var(--primary);
+}
+.gate-flow-grid { grid-template-columns: 1fr; }
+.money-flow-grid-3d { grid-template-columns: 1fr; }
+.buyer-directory-grid { grid-template-columns: 1fr; }
+.quick-ref-grid-overhaul { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
-    <!-- [START: STATUS BAR - HIGH-IMPACT DESIGN] -->
-    <div class="status-bar">
-        <div class="status-content">
-            <div class="status-block main">
-                <div class="logo-icon" style="background: white; color: #102C48;">⚡</div>
-                <div>
-                    <div style="font-size: 1.5rem; font-weight: 900; color: white;">CES 2026 Deal Sprint</div>
-                    <div style="font-size: 0.9rem; font-weight: 400; color: rgba(255, 255, 255, 0.8);">Money is the Scoreboard | Goal: Finish with the Most Cash</div>
-                </div>
-            </div>
+<!-- [START: STATUS BAR - HIGH-IMPACT DESIGN] -->
+<div class="status-bar">
+<div class="status-content">
+<div class="status-block main">
+<div class="logo-icon" style="background: white; color: #102C48;">⚡</div>
+<div>
+<div style="font-size: 1.5rem; font-weight: 900; color: white;">CES 2026 Deal Sprint</div>
+<div style="font-size: 0.9rem; font-weight: 400; color: rgba(255, 255, 255, 0.8);">Money is the Scoreboard | Goal: Finish with the Most Cash</div>
+</div>
+</div>
 
-            <div class="status-block bankroll">
-                <div class="status-label">CURRENT BANKROLL</div>
-                <div class="status-value" id="statusBankroll">$10,000</div>
-            </div>
-            
-            <div class="status-block time-to-close">
-                <div class="status-label">TIME TO CLOSE</div>
-                <div class="status-value" id="statusTime">06:30:00</div>
-            </div>
-            
-            <div class="status-block" style="background: rgba(255, 255, 255, 0.1);">
-                <div class="status-label">TEAMS REMAINING</div>
-                <div class="status-value" id="statusTeams">20 / 20</div>
-            </div>
-        </div>
-    </div>
-    <!-- [END: STATUS BAR - HIGH-IMPACT DESIGN] -->
+<div class="status-block bankroll">
+<div class="status-label">CURRENT BANKROLL</div>
+<div class="status-value" id="statusBankroll">US$10,000</div>
+</div>
 
-    <nav class="nav-tabs">
-        <div class="nav-tabs-inner">
-            <button class="tab-button active" id="btn-overview" onclick="showTab('overview', this)">🎯 Overview & Flow</button>
-            <button class="tab-button" id="btn-schedule" onclick="showTab('schedule', this)">📅 Your Schedule</button>
-            <button class="tab-button" id="btn-gates" onclick="showTab('gates', this)">🚪 The 3 Gates</button>
-            <button class="tab-button" id="btn-buyers" onclick="showTab('buyers', this)">👥 Buyer Directory</button>
-            <button class="tab-button" id="btn-winning" onclick="showTab('winning', this)">💰 How to Win</button>
-            <button class="tab-button" id="btn-quickref" onclick="showTab('quickref', this)">⚡ Quick Guide</button>
-            <button class="tab-button" id="btn-contacts" onclick="showTab('contacts', this)">📞 Contacts</button>
-        </div>
-    </nav>
+<div class="status-block time-to-close">
+<div class="status-label">TIME TO CLOSE</div>
+<div class="status-value" id="statusTime">06:30:00</div>
+</div>
 
-    <main class="container">
+<div class="status-block" style="background: rgba(255, 255, 255, 0.1);">
+<div class="status-label">TEAMS REMAINING</div>
+<div class="status-value" id="statusTeams">20 / 20</div>
+</div>
+</div>
+</div>
+<!-- [END: STATUS BAR - HIGH-IMPACT DESIGN] -->
 
-        <div id="overview" class="tab-content active">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">🎯</div>
-                    <div>
-                        <div class="card-title">Your Mission: Propose a Deal</div>
-                        <div class="card-subtitle">Sell, don't just pitch. Convince the buyer to sign a real transaction.</div>
-                    </div>
-                </div>
-                
-                <div class="alert alert-info">
-                    <strong>The Game:</strong> 20 Taiwanese startups. 7 buyers/mentors. Money is the scoreboard. Finish with the most cash by 3:30 PM.
-                </div>
-                <div class="alert alert-success">
-                    <strong>Core Principle:</strong> Buyers evaluate based on fit, viability, and terms. Your job is to match your proposed transaction (Investment, M&A, Procurement, etc.) to the buyer's functional role.
-                </div>
-            </div>
-            
-            <div class="card flow-visual-card">
-                <div class="card-header" style="border-bottom: none; margin-bottom: 0;">
-                    <div class="card-icon" style="background: linear-gradient(135deg, var(--warning), var(--accent));">🧠</div>
-                    <div>
-                        <div class="card-title" style="background: linear-gradient(90deg, #F9A825, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Visualizing the Deal Flow</div>
-                        <div class="card-subtitle" style="font-size: 1rem;">The cost, risk, and reward of each stage from start to close.</div>
-                    </div>
-                </div>
+<nav class="nav-tabs">
+<div class="nav-tabs-inner">
+<button class="tab-button active" id="btn-overview" onclick="showTab('overview', this)">🎯 Overview & Flow</button>
+<button class="tab-button" id="btn-schedule" onclick="showTab('schedule', this)">📅 Your Schedule</button>
+<button class="tab-button" id="btn-gates" onclick="showTab('gates', this)">🚪 The 3 Gates</button>
+<button class="tab-button" id="btn-buyers" onclick="showTab('buyers', this)">👥 Buyer Directory</button>
+<button class="tab-button" id="btn-winning" onclick="showTab('winning', this)">💰 How to Win</button>
+<button class="tab-button" id="btn-quickref" onclick="showTab('quickref', this)">⚡ Quick Guide</button>
+<button class="tab-button" id="btn-contacts" onclick="showTab('contacts', this)">📞 Contacts</button>
+</div>
+</nav>
 
-                <div class="flow-path-3d">
-                    <div class="flow-path-connector-3d"></div>
-                    
-                    <div class="path-step-3d">
-                        <div class="step-icon-3d"><span class="icon-symbol" style="color: var(--success);">START</span></div>
-                        <div class="step-label-3d">CHECK-IN</div>
-                        <div class="step-info-3d">08:30 AM</div>
-                        <div class="step-payout-3d earn">$10,000 START</div>
-                    </div>
-                    
-                    <div class="path-step-3d">
-                        <div class="step-icon-3d"><span class="icon-symbol">📧</span></div>
-                        <div class="step-label-3d">EMAIL BID</div>
-                        <div class="step-info-3d">11:30 AM | Must be accepted.</div>
-                        <div class="step-payout-3d spend">Cost: $2K - $5K</div>
-                    </div>
-                    
-                    <div class="path-step-3d">
-                        <div class="step-icon-3d"><span class="icon-symbol">🚪1</span></div>
-                        <div class="step-label-3d">GATE 1</div>
-                        <div class="step-info-3d">12:15 PM | 10-min Discovery.</div>
-                        <div class="step-payout-3d earn">+$3,000 or $0</div>
-                    </div>
-                    
-                    <div class="path-step-3d">
-                        <div class="step-icon-3d" style="border-color: var(--accent);"><span class="icon-symbol" style="background: linear-gradient(135deg, var(--accent), var(--warning)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🔍2</span></div>
-                        <div class="step-label-3d">GATE 2</div>
-                        <div class="step-info-3d">13:50 PM | 20-min Qualification.</div>
-                        <div class="step-payout-3d spend">Cost: $2,000 Entry</div>
-                    </div>
+<main class="container">
 
-                    <div class="path-step-3d">
-                        <div class="step-icon-3d" style="border-color: var(--success);"><span class="icon-symbol" style="background: linear-gradient(135deg, var(--success), #00C853); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🤝3</span></div>
-                        <div class="step-label-3d">GATE 3</div>
-                        <div class="step-info-3d">15:00 PM | 20-min Negotiation.</div>
-                        <div class="step-payout-3d earn">+$15,000 Max</div>
-                    </div>
-                </div>
-            </div>
+<div id="overview" class="tab-content active">
+<div class="card">
+<div class="card-header">
+<div class="card-icon">🎯</div>
+<div>
+<div class="card-title">Your Mission: Propose a Deal</div>
+<div class="card-subtitle">Sell, don't just pitch. Convince the buyer to sign a real transaction.</div>
+</div>
+</div>
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon" style="background: linear-gradient(135deg, #FFB300, #FF3D71);">📜</div>
-                    <div>
-                        <div class="card-title" style="background: linear-gradient(90deg, #F9A825, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Strategic Resources & Recovery</div>
-                        <div class="card-subtitle" style="font-size: 1rem;">Your lifeline and path to recovery.</div>
-                    </div>
-                </div>
+<div class="alert alert-info">
+<strong>The Game:</strong> 20 Taiwanese startups. 7 buyers/mentors. Money is the scoreboard. Finish with the most cash by 3:30 PM.
+</div>
+<div class="alert alert-success">
+<strong>Core Principle:</strong> Buyers evaluate based on fit, viability, and terms. Your job is to match your proposed transaction (Investment, M&A, Procurement, etc.) to the buyer's functional role.
+</div>
+</div>
 
-                <div class="resource-grid">
-                    <div class="resource-card war-room">
-                        <div class="resource-icon-title">🛡️ The War Room (Ken Huang)</div>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Get paid strategic consulting (deal sourcing, due diligence) from a Mosaic VC founding member.</p>
-                        
-                        <div class="resource-detail-box">
-                            <p><strong>AM ($1,000):</strong> Write your winning cold email and determine your max bid.</p>
-                            <p style="margin-top: 0.5rem;"><strong>PM ($1k - $2k):</strong> Structure your Gate 3 Deal and prep for tough negotiation.</p>
-                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">(Find Ken at the War Room station)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="resource-card buyback">
-                        <div class="resource-icon-title">🔄 Overflow & $5K Buyback</div>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">If your single email is not accepted by any buyer, you enter a random Overflow Draw.</p>
-                        
-                        <div class="resource-detail-box">
-                            <p>If you are one of the 2 teams still without a meeting:</p>
-                            <p style="font-size: 1.1rem; margin-top: 0.5rem; color: var(--accent);">You have 60 seconds to <strong>PAY $5,000</strong> (half your bankroll) to buy your way back into Gate 1.</p>
-                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">If you pass, you are out of the gate pipeline.</p>
-                        </div>
-                    </div>
+<div class="card flow-visual-card">
+<div class="card-header" style="border-bottom: none; margin-bottom: 0;">
+<div class="card-icon" style="background: linear-gradient(135deg, var(--warning), var(--accent));">🧠</div>
+<div>
+<div class="card-title" style="background: linear-gradient(90deg, #F9A825, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Visualizing the Deal Flow</div>
+<div class="card-subtitle" style="font-size: 1rem;">The cost, risk, and reward of each stage from start to close.</div>
+</div>
+</div>
 
-                    <div class="resource-card hot-seat">
-                        <div class="resource-icon-title">🔥 Hot Seat Challenge</div>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">The Hot Seat is your path to recovery. If you are eliminated at Gate 2, you have one chance:</p>
-                        
-                        <div class="resource-detail-box">
-                            <p>Deliver a sharp, 30-second pitch to Ken Huang. He is looking for clarity, urgency, and a clear call to action.</p>
-                            <p style="font-size: 1.1rem; margin-top: 0.5rem; color: var(--success);">The single best pitch wins a final <strong>+$8,000</strong> cash.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="flow-path-3d">
+<div class="flow-path-connector-3d"></div>
 
-        <div id="schedule" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">📅</div>
-                    <div>
-                        <div class="card-title">Your Complete Agenda</div>
-                        <div class="card-subtitle">Follow this timeline to stay on track.</div>
-                    </div>
-                </div>
-                
-                <div style="overflow-x: auto;">
-                    <table class="schedule-table">
-                        <thead>
-                            <tr>
-                                <th>Time</th>
-                                <th>Activity</th>
-                                <th>Your Task</th>
-                                <th>Location</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Time">08:30-09:00</td>
-                                <td data-label="Activity">Check-in</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">💰</span> Get your $10,000 bankroll and handouts.</td>
-                                <td data-label="Location">Lobby</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">09:00-09:30</td>
-                                <td data-label="Activity">Opening</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">💡</span> Learn the rules and day structure.</td>
-                                <td data-label="Location">Main Room</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">09:30-10:00</td>
-                                <td data-label="Activity">Lecture</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">📚</span> Learn how to build customer lists.</td>
-                                <td data-label="Location">Main Room</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">10:00-10:45</td>
-                                <td data-label="Activity">Research + War Room</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">🔎</span> Build your 20-person list. Visit Ken for strategy ($1k).</td>
-                                <td data-label="Location">Your Table</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time" class="critical-time">10:45-11:15</td>
-                                <td data-label="Activity" class="critical-time">Customer List Review</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">📤</span> Upload list by 10:45! (Earn +$1k or lose -$1k).</td>
-                                <td data-label="Location">Your Table</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">11:15-11:30</td>
-                                <td data-label="Activity">Email Prep</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">✍️</span> Draft ONE cold email + bid ($2k-$5k).</td>
-                                <td data-label="Location">Your Table</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time" class="critical-time">11:30-11:35</td>
-                                <td data-label="Activity" class="critical-time">Auction Opens</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">📧</span> Send ONE email to ONE buyer.</td>
-                                <td data-label="Location">Your Table</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">11:55-12:15</td>
-                                <td data-label="Activity">Overflow Draw + Buyback</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">🔁</span> Not picked? Get drawn randomly or pay $5k to buy back in.</td>
-                                <td data-label="Location">Main Room</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">12:15-12:50</td>
-                                <td data-label="Activity">Gate-1 Meetings</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">🚪</span> 10-min pitch. Get "Interested" (+$3k) or "Pass" ($0).</td>
-                                <td data-label="Location">Meeting Rooms</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">12:50-13:50</td>
-                                <td data-label="Activity">Lunch + Checkpoint 1</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">📊</span> Count your cash. Leaderboard goes live.</td>
-                                <td data-label="Location">Dining Area</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">13:50-14:50</td>
-                                <td data-label="Activity">Gate-2 Meetings</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">🔍</span> Pay $2k. 20-min Q&A. Earn $8k, $5k, or $0.</td>
-                                <td data-label="Location">Meeting Rooms</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time" class="critical-time">14:50-14:55</td>
-                                <td data-label="Activity" class="critical-time">Gate-2 Results</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">📢</span> Buyer announces who advances to Gate 3.</td>
-                                <td data-label="Location">Meeting Rooms</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">15:00-15:20</td>
-                                <td data-label="Activity">Gate-3 Meetings</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">🤝</span> Pay $3k. 20-min negotiation. Earn $15k, $10k, or $0.</td>
-                                <td data-label="Location">Meeting Rooms</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">15:00-15:20</td>
-                                <td data-label="Activity">Hot Seat Challenge</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">🔥</span> Eliminated? 30-sec pitch to Ken for $8k.</td>
-                                <td data-label="Location">Main Room</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Time">15:20-15:30</td>
-                                <td data-label="Activity">Final Count</td>
-                                <td data-label="Your Task" class="task-detail"><span class="icon-small">🏆</span> Winner is declared!</td>
-                                <td data-label="Location">Main Room</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+<div class="path-step-3d">
+<div class="step-icon-3d"><span class="icon-symbol" style="color: var(--success);">START</span></div>
+<div class="step-label-3d">CHECK-IN</div>
+<div class="step-info-3d">08:30 AM</div>
+<div class="step-payout-3d earn">US$10,000 START</div>
+</div>
 
-        <div id="gates" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">🚪</div>
-                    <div>
-                        <div class="card-title">The Three Gates: Your Path to a Deal</div>
-                        <div class="card-subtitle">Understand the cost, goal, and decision criteria for each stage.</div>
-                    </div>
-                </div>
+<div class="path-step-3d">
+<div class="step-icon-3d"><span class="icon-symbol">📧</span></div>
+<div class="step-label-3d">EMAIL BID</div>
+<div class="step-info-3d">11:30 AM | Must be accepted.</div>
+<div class="step-payout-3d spend">Cost: US$2K - US$5K</div>
+</div>
 
-                <div class="gate-flow-grid">
-                    
-                    <div class="gate-step-card active-flow">
-                        <div class="gate-title-visual">🚪 Gate 1: Discovery</div>
-                        <div class="gate-subtitle-visual">10-min | Goal: Get a Second Meeting</div>
-                        
-                        <div class="gate-cost-payout" style="border-left: 4px solid var(--success);">
-                            <span style="font-size: 1.1rem; color: var(--text-primary);">Cost: <span class="cost-amount">-$2K to -$5K (Bid)</span></span><br>
-                            <span style="font-size: 1.1rem; color: var(--text-primary);">Payout: <span class="payout-amount">+$3,000</span> or $0</span>
-                        </div>
+<div class="path-step-3d">
+<div class="step-icon-3d"><span class="icon-symbol">🚪1</span></div>
+<div class="step-label-3d">GATE 1</div>
+<div class="step-info-3d">12:15 PM | 10-min Discovery.</div>
+<div class="step-payout-3d earn">+US$3,000 or US$0</div>
+</div>
 
-                        <h4 style="color: var(--primary); margin: 1rem 0 0.5rem; font-size: 1.1rem; font-weight: 800;">Your Focus:</h4>
-                        <ul class="styled-list" style="padding-left: 0;">
-                            <li>Present Problem, Solution, Traction.</li>
-                            <li>State clear Transaction Proposal to the buyer.</li>
-                        </ul>
-                    </div>
+<div class="path-step-3d">
+<div class="step-icon-3d" style="border-color: var(--accent);"><span class="icon-symbol" style="background: linear-gradient(135deg, var(--accent), var(--warning)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🔍2</span></div>
+<div class="step-label-3d">GATE 2</div>
+<div class="step-info-3d">13:50 PM | 20-min Qualification.</div>
+<div class="step-payout-3d spend">Cost: US$2,000 Entry</div>
+</div>
 
-                    <div class="gate-step-card active-flow" style="border-color: var(--warning);">
-                        <div class="gate-title-visual" style="color: var(--warning);">🔍 Gate 2: Qualification</div>
-                        <div class="gate-subtitle-visual">20-min | Goal: Prove Viability & Advance</div>
-                        
-                        <div class="gate-cost-payout" style="border-left: 4px solid var(--accent);">
-                            <span style="font-size: 1.1rem; color: var(--text-primary);">Cost: <span class="cost-amount">-$2,000 (Entry Fee)</span></span><br>
-                            <span style="font-size: 1.1rem; color: var(--text-primary);">Payout: <span class="payout-amount">+$8,000</span>, +$5,000, or $0</span>
-                        </div>
+<div class="path-step-3d">
+<div class="step-icon-3d" style="border-color: var(--success);"><span class="icon-symbol" style="background: linear-gradient(135deg, var(--success), #00C853); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🤝3</span></div>
+<div class="step-label-3d">GATE 3</div>
+<div class="step-info-3d">15:00 PM | 20-min Negotiation.</div>
+<div class="step-payout-3d earn">+US$15,000 Max</div>
+</div>
+</div>
+</div>
 
-                        <h4 style="color: var(--warning); margin: 1rem 0 0.5rem; font-size: 1.1rem; font-weight: 800;">Your Focus:</h4>
-                        <ul class="styled-list" style="padding-left: 0;">
-                            <li>Deep dive on Unit Economics (CAC/LTV).</li>
-                            <li>Prove Scalability and GTM Strategy.</li>
-                            <li>Address all Gate 1 objections.</li>
-                        </ul>
-                    </div>
+<div class="card">
+<div class="card-header">
+<div class="card-icon" style="background: linear-gradient(135deg, #FFB300, #FF3D71);">📜</div>
+<div>
+<div class="card-title" style="background: linear-gradient(90deg, #F9A825, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Strategic Resources & Recovery</div>
+<div class="card-subtitle" style="font-size: 1rem;">Your lifeline and path to recovery.</div>
+</div>
+</div>
 
-                    <div class="gate-step-card active-flow" style="border-color: var(--success);">
-                        <div class="gate-title-visual" style="color: var(--success);">🤝 Gate 3: Negotiation</div>
-                        <div class="gate-subtitle-visual">20-min | Goal: Close the Final Deal</div>
-                        
-                        <div class="gate-cost-payout" style="border-left: 4px solid var(--accent);">
-                            <span style="font-size: 1.1rem; color: var(--text-primary);">Cost: <span class="cost-amount">-$3,000 (Entry Fee)</span></span><br>
-                            <span style="font-size: 1.1rem; color: var(--text-primary);">Payout: <span class="payout-amount">+$15,000</span>, +$10,000, or $0</span>
-                        </div>
+<div class="resource-grid">
+<div class="resource-card war-room">
+<div class="resource-icon-title">🛡️ The War Room (Ken Huang)</div>
+<p style="color: var(--text-secondary); margin-bottom: 1rem;">Get paid strategic consulting (deal sourcing, due diligence) from a Mosaic VC founding member.</p>
 
-                        <h4 style="color: var(--success); margin: 1rem 0 0.5rem; font-size: 1.1rem; font-weight: 800;">Your Focus:</h4>
-                        <ul class="styled-list" style="padding-left: 0;">
-                            <li>Final Deal Summary and Key Terms.</li>
-                            <li>Negotiate with confidence.</li>
-                            <li>Defend your Valuation / Pricing.</li>
-                        </ul>
-                    </div>
-                </div>
+<div class="resource-detail-box">
+<p><strong>AM (US$1,000):</strong> Write your winning cold email and determine your max bid.</p>
+<p style="margin-top: 0.5rem;"><strong>PM (US$1k - US$2k):</strong> Structure your Gate 3 Deal and prep for tough negotiation.</p>
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">(Find Ken at the War Room station)</p>
+</div>
+</div>
 
-                <div class="alert alert-danger" style="margin-top: 2rem;">
-                    <strong>Critical Decision:</strong> At 2:50 PM, your buyer gathers all Gate 2 teams (2 or 3) and announces the 2 teams that advance to Gate 3. Ensure your performance merits selection!
-                </div>
-            </div>
-        </div>
-        
-        <div id="buyers" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">👥</div>
-                    <div>
-                        <div class="card-title">Buyer Directory: Who to Sell To</div>
-                        <div class="card-subtitle">Match your company type to the buyer's functional role. Click a name to load their deep-dive profile.</div>
-                    </div>
-                </div>
-                
-                <div class="buyer-directory-grid">
-                    <div class="buyer-card">
-                        <a href="javascript:void(0)" onclick="selectBuyer('johnny')" class="buyer-name-link-card">Johnny Yu ↗</a>
-                        <div class="buyer-role-card">CVC / Investment</div>
-                        <div class="buyer-focus-pill">Equity Deals</div>
-                        <div class="buyer-focus-pill">Series A</div>
-                        <div class="buyer-card-divider"></div>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">He writes big checks for Series A. Pitch investment that fits his strategic portfolio themes.</p>
-                    </div>
-                    <div class="buyer-card">
-                        <a href="javascript:void(0)" onclick="selectBuyer('volker')" class="buyer-name-link-card">Dr. Volker Kaese ↗</a>
-                        <div class="buyer-role-card">Supply Chain / Procurement</div>
-                        <div class="buyer-focus-pill">Supplier Partnership</div>
-                        <div class="buyer-focus-pill">EV Components</div>
-                        <div class="buyer-card-divider"></div>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">He buys parts and software that makes the supply chain efficient for mobility/automotive.</p>
-                    </div>
-                    <div class="buyer-card">
-                        <a href="javascript:void(0)" onclick="selectBuyer('ashley')" class="buyer-name-link-card">Ashley Hsueh ↗</a>
-                        <div class="buyer-role-card">Corporate Development / M&A</div>
-                        <div class="buyer-focus-pill">Acquisition</div>
-                        <div class="buyer-focus-pill">M&A Strategy</div>
-                        <div class="buyer-card-divider"></div>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">She is advising large corporations on who to buy or partner with. Pitch clear synergies.</p>
-                    </div>
-                    <div class="buyer-card">
-                        <a href="javascript:void(0)" onclick="selectBuyer('deborah')" class="buyer-name-link-card">Deborah Magid ↗</a>
-                        <div class="buyer-role-card">Innovation Scout / POC</div>
-                        <div class="buyer-focus-pill">Pilot Programs</div>
-                        <div class="buyer-focus-pill">Enterprise Tech</div>
-                        <div class="buyer-card-divider"></div>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">She is looking for new tech to test within large corporate environments (POCs).</p>
-                    </div>
-                    <div class="buyer-card">
-                        <a href="javascript:void(0)" onclick="selectBuyer('shafeen')" class="buyer-name-link-card">Shafeen Charania ↗</a>
-                        <div class="buyer-role-card">Operations / Tech Procurement</div>
-                        <div class="buyer-focus-pill">SaaS Tools</div>
-                        <div class="buyer-focus-pill">Productivity</div>
-                        <div class="buyer-card-divider"></div>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">He buys software to improve efficiency across multi-country operations (HR, workflow, etc.).</p>
-                    </div>
-                    <div class="buyer-card">
-                        <a href="javascript:void(0)" onclick="selectBuyer('josh')" class="buyer-name-link-card">Josh Fu ↗</a>
-                        <div class="buyer-role-card">Partnerships / Channel Development</div>
-                        <div class="buyer-focus-pill">Co-Marketing</div>
-                        <div class="buyer-focus-pill">Distribution Deals</div>
-                        <div class="buyer-card-divider"></div>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">He is looking for win-win deals to expand market reach and sales channels in e-commerce/retail.</p>
-                    </div>
-                    <div class="buyer-card">
-                        <a href="javascript:void(0)" onclick="selectBuyer('chander')" class="buyer-name-link-card">Chander Kant ↗</a>
-                        <div class="buyer-role-card">Technology Partnerships / Acquirer</div>
-                        <div class="buyer-focus-pill">Tech Licensing</div>
-                        <div class="buyer-focus-pill">Deep Tech M&A</div>
-                        <div class="buyer-card-divider"></div>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">He is an entrepreneur who buys deep tech to integrate or flip. Pitch IP and tech stack quality.</p>
-                    </div>
-                </div>
+<div class="resource-card buyback">
+<div class="resource-icon-title">🔄 Overflow & US$5K Buyback</div>
+<p style="color: var(--text-secondary); margin-bottom: 1rem;">If your single email is not accepted by any buyer, you enter a random Overflow Draw.</p>
 
-                <div id="buyerProfileContainer">
-                    <div class="alert alert-info" style="margin-top: 2rem;">
-                        <strong>Instructions:</strong> Click any buyer's name above to load their deep-dive profile and see exactly what kind of transaction they are looking to buy.
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="resource-detail-box">
+<p>If you are one of the 2 teams still without a meeting:</p>
+<p style="font-size: 1.1rem; margin-top: 0.5rem; color: var(--accent);">You have 60 seconds to <strong>PAY US$5,000</strong> (half your bankroll) to buy your way back into Gate 1.</p>
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">If you pass, you are out of the gate pipeline.</p>
+</div>
+</div>
 
-        <div id="winning" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">💰</div>
-                    <div>
-                        <div class="card-title">How to Win: The Money Model</div>
-                        <div class="card-subtitle">Maximize your cash by strategically earning and spending.</div>
-                    </div>
-                </div>
+<div class="resource-card hot-seat">
+<div class="resource-icon-title">🔥 Hot Seat Challenge</div>
+<p style="color: var(--text-secondary); margin-bottom: 1rem;">The Hot Seat is your path to recovery. If you are eliminated at Gate 2, you have one chance:</p>
 
-                <div class="alert alert-success">
-                    <strong>Max Theoretical Earnings: $32,000 Net Profit</strong><br>
-                    Start $10k + $1k List + $3k G1 + $8k G2 + $15k G3 - $5k Total Fees. Focus on Gate 3 for the big payout.
-                </div>
+<div class="resource-detail-box">
+<p>Deliver a sharp, 30-second pitch to Ken Huang. He is looking for clarity, urgency, and a clear call to action.</p>
+<p style="font-size: 1.1rem; margin-top: 0.5rem; color: var(--success);">The single best pitch wins a final <strong>+US$8,000</strong> cash.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-                <div class="money-flow-grid-3d">
-                    
-                    <div class="money-panel">
-                        <div class="money-header earn">✅ Ways to EARN Money</div>
-                        <div class="money-list">
-                            <div class="money-list-item"><span>Exceptional Customer List</span><span class="payout">+$1,000</span></div>
-                            <div class="money-list-item"><span>Gate-1 "Interested"</span><span class="payout">+$3,000</span></div>
-                            <div class="money-list-item"><span>Gate-2 "Decent"</span><span class="payout">+$5,000</span></div>
-                            <div class="money-list-item"><span>Gate-2 "Strong"</span><span class="payout">+$8,000</span></div>
-                            <div class="money-list-item"><span>Hot Seat Challenge Winner</span><span class="payout">+$8,000</span></div>
-                            <div class="money-list-item"><span>Gate-3 "Conditional Deal"</span><span class="payout">+$10,000</span></div>
-                            <div class="money-list-item"><span>Gate-3 "Deal"</span><span class="payout">+$15,000</span></div>
-                        </div>
-                    </div>
-                    
-                    <div class="money-panel">
-                        <div class="money-header spend">❌ Ways to SPEND Money</div>
-                        <div class="money-list">
-                            <div class="money-list-item"><span>Incomplete Customer List</span><span class="cost">-$1,000</span></div>
-                            <div class="money-list-item"><span>War Room (AM)</span><span class="cost">-$1,000</span></div>
-                            <div class="money-list-item"><span>War Room (PM)</span><span class="cost">-$1k to -$2k</span></div>
-                            <div class="money-list-item"><span>Gate-1 Email Bid</span><span class="cost">-$2k to -$5k</span></div>
-                            <div class="money-list-item"><span>Gate-2 Entry Fee</span><span class="cost">-$2,000</span></div>
-                            <div class="money-list-item"><span>Gate-3 Entry Fee</span><span class="cost">-$3,000</span></div>
-                            <div class="money-list-item"><span>Gate-1 Buyback</span><span class="cost">-$5,000</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="quickref" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">⚡</div>
-                    <div>
-                        <div class="card-title">Startup Quick Reference Guide</div>
-                        <div class="card-subtitle">The entire day, summarized.</div>
-                    </div>
-                </div>
+<div id="schedule" class="tab-content">
+<div class="card">
+<div class="card-header">
+<div class="card-icon">📅</div>
+<div>
+<div class="card-title">Your Complete Agenda</div>
+<div class="card-subtitle">Follow this timeline to stay on track.</div>
+</div>
+</div>
 
-                <div class="quick-ref-grid-overhaul">
-                    
-                    <div class="quick-ref-card-overhaul" style="grid-column: 1 / span 1;">
-                        <div class="quick-ref-title-overhaul" style="color: var(--warning);">🎯 Your Mission & Strategy</div>
-                        <ul class="quick-ref-content-list styled-list" style="padding-left: 0;">
-                            <li><strong>You're SELLING or PARTNERING.</strong> Propose a real transaction to a buyer, partner, or acquirer.</li>
-                            <li><strong>War Room (Ken Huang):</strong> Get 1-on-1 strategy help. Use it for targeting, email writing, or negotiation prep.</li>
-                            <li><strong>AM: -$1,000</strong> | <strong>PM: -$1k-$2k</strong> (Find Ken in the War Room)</li>
-                            <li><strong>Money Tips - Start:</strong> $10,000</li>
-                            <li><strong>Money Tips - Earn:</strong> Exceptional List (+$1k), Gates (+$3k to +$15k), Hot Seat (+$8k)</li>
-                            <li><strong>Money Tips - Spend:</strong> War Room (-$1k), Bids (-$2k+), Gate Entries (-$2k, -$3k), Buyback (-$5k)</li>
-                        </ul>
-                    </div>
+<div style="overflow-x: auto;">
+<table class="schedule-table">
+<thead>
+<tr>
+<th>Time</th>
+<th>Activity</th>
+<th>Your Task</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Time">08:30-09:00</td>
+<td data-label="Activity">Check-in</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">💰</span> Get your US$10,000 bankroll and handouts.</td>
+<td data-label="Location">Lobby</td>
+</tr>
+<tr>
+<td data-label="Time">09:00-09:30</td>
+<td data-label="Activity">Opening</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">💡</span> Learn the rules and day structure.</td>
+<td data-label="Location">Main Room</td>
+</tr>
+<tr>
+<td data-label="Time">09:30-10:00</td>
+<td data-label="Activity">Lecture</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">📚</span> Learn how to build customer lists.</td>
+<td data-label="Location">Main Room</td>
+</tr>
+<tr>
+<td data-label="Time">10:00-10:45</td>
+<td data-label="Activity">Research + War Room</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">🔎</span> Build your 20-person list. Visit Ken for strategy (US$1k).</td>
+<td data-label="Location">Your Table</td>
+</tr>
+<tr>
+<td data-label="Time" class="critical-time">10:45-11:15</td>
+<td data-label="Activity" class="critical-time">Customer List Review</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">📤</span> Upload list by 10:45! (Earn +US$1k or lose -US$1k).</td>
+<td data-label="Location">Your Table</td>
+</tr>
+<tr>
+<td data-label="Time">11:15-11:30</td>
+<td data-label="Activity">Email Prep</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">✍️</span> Draft ONE cold email + bid (US$2k-US$5k).</td>
+<td data-label="Location">Your Table</td>
+</tr>
+<tr>
+<td data-label="Time" class="critical-time">11:30-11:35</td>
+<td data-label="Activity" class="critical-time">Auction Opens</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">📧</span> Send ONE email to ONE buyer.</td>
+<td data-label="Location">Your Table</td>
+</tr>
+<tr>
+<td data-label="Time">11:55-12:15</td>
+<td data-label="Activity">Overflow Draw + Buyback</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">🔁</span> Not picked? Get drawn randomly or pay US$5k to buy back in.</td>
+<td data-label="Location">Main Room</td>
+</tr>
+<tr>
+<td data-label="Time">12:15-12:50</td>
+<td data-label="Activity">Gate-1 Meetings</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">🚪</span> 10-min pitch. Get "Interested" (+US$3k) or "Pass" (US$0).</td>
+<td data-label="Location">Meeting Rooms</td>
+</tr>
+<tr>
+<td data-label="Time">12:50-13:50</td>
+<td data-label="Activity">Lunch + Checkpoint 1</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">📊</span> Count your cash. Leaderboard goes live.</td>
+<td data-label="Location">Dining Area</td>
+</tr>
+<tr>
+<td data-label="Time">13:50-14:50</td>
+<td data-label="Activity">Gate-2 Meetings</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">🔍</span> Pay US$2k. 20-min Q&A. Earn US$8k, US$5k, or US$0.</td>
+<td data-label="Location">Meeting Rooms</td>
+</tr>
+<tr>
+<td data-label="Time" class="critical-time">14:50-14:55</td>
+<td data-label="Activity" class="critical-time">Gate-2 Results</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">📢</span> Buyer announces who advances to Gate 3.</td>
+<td data-label="Location">Meeting Rooms</td>
+</tr>
+<tr>
+<td data-label="Time">15:00-15:20</td>
+<td data-label="Activity">Gate-3 Meetings</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">🤝</span> Pay US$3k. 20-min negotiation. Earn US$15k, US$10k, or US$0.</td>
+<td data-label="Location">Meeting Rooms</td>
+</tr>
+<tr>
+<td data-label="Time">15:00-15:20</td>
+<td data-label="Activity">Hot Seat Challenge</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">🔥</span> Eliminated? 30-sec pitch to Ken for US$8k.</td>
+<td data-label="Location">Main Room</td>
+</tr>
+<tr>
+<td data-label="Time">15:20-15:30</td>
+<td data-label="Activity">Final Count</td>
+<td data-label="Your Task" class="task-detail"><span class="icon-small">🏆</span> Winner is declared!</td>
+<td data-label="Location">Main Room</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
-                    <div class="quick-ref-card-overhaul" style="border-left: 4px solid var(--accent);">
-                        <div class="quick-ref-title-overhaul" style="color: var(--accent);">⏰ Key Deadlines</div>
-                        <ul class="quick-ref-content-list styled-list" style="padding-left: 0;">
-                            <li><strong>10:45 AM:</strong> Customer List MUST be uploaded to G-Drive.</li>
-                            <li><strong>11:30 AM:</strong> ONE email to ONE buyer must be sent.</li>
-                            <li><strong>14:50 PM:</strong> Gate 2 results announced.</li>
-                            <li><strong>15:20 PM:</strong> Final Count and Winner declared.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="quick-ref-card-overhaul" style="border-left: 4px solid var(--success);">
-                        <div class="quick-ref-title-overhaul" style="color: var(--success);">👥 Buyer & Contact Directory</div>
-                        <ul class="quick-ref-content-list styled-list" style="line-height: 2; padding-left: 0;">
-                            <li><strong><a href="https://www.linkedin.com/in/johnny-yu-21b36128/" target="_blank" rel="noopener noreferrer" class="buyer-dir-link">Johnny ↗:</a></strong> Investment (Equity)</li>
-                            <li><strong><a href="https://www.linkedin.com/in/volkerkaese/" target="_blank" rel="noopener noreferrer" class="buyer-dir-link">Volker ↗:</a></strong> Supply Chain (Supplier Deal)</li>
-                            <li><strong><a href="https://www.linkedin.com/in/ashleyhsueh/" target="_blank" rel="noopener noreferrer" class="buyer-dir-link">Ashley ↗:</a></strong> M&A (Acquisition)</li>
-                            <li><strong>Kyle:</strong> Scoring & Leaderboard</li>
-                            <li><strong>Jade:</strong> Cash, Payments, G-Drive Links</li>
-                            <li><strong>Volker H:</strong> MC & Rules</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div id="gates" class="tab-content">
+<div class="card">
+<div class="card-header">
+<div class="card-icon">🚪</div>
+<div>
+<div class="card-title">The Three Gates: Your Path to a Deal</div>
+<div class="card-subtitle">Understand the cost, goal, and decision criteria for each stage.</div>
+</div>
+</div>
 
-        <div id="contacts" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">📞</div>
-                    <div>
-                        <div class="card-title">Operations Team Contacts</div>
-                        <div class="card-subtitle">Your support crew for the day.</div>
-                    </div>
-                </div>
+<div class="gate-flow-grid">
 
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <div class="contact-role">Scorekeeper</div>
-                        <div class="contact-name">Kyle</div>
-                        <div class="contact-email"><a href="mailto:yh@mvl.biz">yh@mvl.biz</a></div>
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Leaderboard updates, timing questions, slot tracking</p>
-                    </div>
+<div class="gate-step-card active-flow">
+<div class="gate-title-visual">🚪 Gate 1: Discovery</div>
+<div class="gate-subtitle-visual">10-min | Goal: Get a Second Meeting</div>
 
-                    <div class="contact-card">
-                        <div class="contact-role">Operations / Cash</div>
-                        <div class="contact-name">Jade</div>
-                        <div class="contact-email"><a href="mailto:jc@mvl.biz">jc@mvl.biz</a></div>
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Cash distribution, all payments, fees, G-Drive links</p>
-                    </div>
+<div class="gate-cost-payout" style="border-left: 4px solid var(--success);">
+<span style="font-size: 1.1rem; color: var(--text-primary);">Cost: <span class="cost-amount">-US$2K to -US$5K (Bid)</span></span><br>
+<span style="font-size: 1.1rem; color: var(--text-primary);">Payout: <span class="payout-amount">+US$3,000</span> or US$0</span>
+</div>
 
-                    <div class="contact-card">
-                        <div class="contact-role">MC / Rules</div>
-                        <div class="contact-name">Volker H.</div>
-                        <div class="contact-email"><a href="mailto:vh@mvl.biz">vh@mvl.biz</a></div>
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Event coordination, rules clarification, announcements</p>
-                    </div>
+<h4 style="color: var(--primary); margin: 1rem 0 0.5rem; font-size: 1.1rem; font-weight: 800;">Your Focus:</h4>
+<ul class="styled-list" style="padding-left: 0;">
+<li>Present Problem, Solution, Traction.</li>
+<li>State clear Transaction Proposal to the buyer.</li>
+</ul>
+</div>
 
-                    <div class="contact-card">
-                        <div class="contact-role">War Room / Hot Seat</div>
-                        <div class="contact-name">Ken Huang</div>
-                        <div class="contact-email"><a href="mailto:ken@mvl.biz">ken@mvl.biz</a></div>
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Strategic consulting, Hot Seat judge</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="gate-step-card active-flow" style="border-color: var(--warning);">
+<div class="gate-title-visual" style="color: var(--warning);">🔍 Gate 2: Qualification</div>
+<div class="gate-subtitle-visual">20-min | Goal: Prove Viability & Advance</div>
 
-    </main>
+<div class="gate-cost-payout" style="border-left: 4px solid var(--accent);">
+<span style="font-size: 1.1rem; color: var(--text-primary);">Cost: <span class="cost-amount">-US$2,000 (Entry Fee)</span></span><br>
+<span style="font-size: 1.1rem; color: var(--text-primary);">Payout: <span class="payout-amount">+US$8,000</span>, +US$5,000, or US$0</span>
+</div>
 
-    <script>
-        // Buyer Data (SOURCE OF TRUTH)
-        const buyerData = {
-            johnny: {
-                name: "Johnny Yu",
-                role: "CVC / Investment",
-                org: "Mosaic Venture Lab",
-                linkedIn: "https://www.linkedin.com/in/johnny-yu-21b36128/",
-                caps: { gate1: 3, gate2: 3, gate3: 2 },
-                roleDescription: "Equity stakes in startups that fit strategic portfolio themes. He writes big checks for Series A.",
-                expertise: "Semiconductors, smart mobility, biotech, venture capital",
-                whatToPropose: [
-                    "We're raising Series A. Here's our traction and unit economics.",
-                    "We seek a strategic investment to fit Mosaic's mobility portfolio.",
-                    "We need cross-border capital to expand from Taiwan to the US.",
-                    "We are proposing an equity deal with a clear exit potential."
-                ]
-            },
-            volker: {
-                name: "Dr. Volker Kaese",
-                role: "Supply Chain / Procurement",
-                org: "Ingenev Mobility",
-                linkedIn: "https://www.linkedin.com/in/volkerkaese/",
-                caps: { gate1: 3, gate2: 3, gate3: 2 },
-                roleDescription: "Supplier partnerships, components, manufacturing services, vendor agreements. He buys parts and software that makes the supply chain efficient.",
-                expertise: "Automotive, EV batteries, mobility, supply chain, materials",
-                whatToPropose: [
-                    "We want to be your Tier 1 supplier. Here is our pilot order proposal.",
-                    "We propose a component supply agreement for your EV applications.",
-                    "We offer manufacturing services and can prove our scalability.",
-                    "Our AI supply chain software has clear ROI; let's run a pilot."
-                ]
-            },
-            ashley: {
-                name: "Ashley Hsueh",
-                role: "Corporate Development / M&A",
-                org: "Bain & Company",
-                linkedIn: "https://www.linkedin.com/in/ashleyhsueh/",
-                caps: { gate1: 3, gate2: 3, gate3: 2 },
-                roleDescription: "Acquisitions, strategic M&A deals, corporate partnerships. She is advising large corporations on who to buy or partner with.",
-                expertise: "Technology, cloud services, performance improvement, strategy",
-                whatToPropose: [
-                    "We seek a strategic acquisition. Here is our valuation and synergy model.",
-                    "We are proposing an M&A deal to expand into North America or Asia.",
-                    "Our tech is accretive to your cloud division; let's discuss acquisition.",
-                    "We propose a corporate partnership for large enterprises."
-                ]
-            },
-            deborah: {
-                name: "Deborah Magid",
-                role: "Innovation Scout / POC",
-                org: "NextStar Venture Partners",
-                linkedIn: "https://www.linkedin.com/in/deborah-magid-b5318/",
-                caps: { gate1: 3, gate2: 3, gate3: 2 },
-                roleDescription: "Pilot programs, proof-of-concept projects, technology partnerships. She is looking for new tech to test within large corporate environments.",
-                expertise: "Enterprise software, AI, IoT, cybersecurity, sustainability",
-                whatToPropose: [
-                    "Let's run a 90-day POC with our enterprise security/AI tool.",
-                    "We propose a 6-month pilot with 3 of your corporate clients.",
-                    "Our IoT platform has a measurable ROI; let's start a pilot.",
-                    "We are looking for an innovation partnership with an enterprise."
-                ]
-            },
-            shafeen: {
-                name: "Shafeen Charania",
-                role: "Operations / Technology Procurement",
-                org: "Fluency Pte Ltd.",
-                linkedIn: "https://www.linkedin.com/in/shafeen/",
-                caps: { gate1: 3, gate2: 3, gate3: 2 },
-                roleDescription: "Operational SaaS tools, productivity platforms, business software. He buys software to improve efficiency across multi-country operations.",
-                expertise: "Gaming, edtech, operations, multi-country scaling, partnerships",
-                whatToPropose: [
-                    "Our SaaS tool automates HR/finance. Let's do a 3-month trial.",
-                    "This platform has a clear time/cost ROI; we want to sell it to your ops team.",
-                    "This is a workflow tool for distributed teams with existing integrations.",
-                    "We propose an operational service with 90-day ROI proof."
-                ]
-            },
-            josh: {
-                name: "Josh Fu",
-                role: "Partnerships / Channel Development",
-                org: "Akohub",
-                linkedIn: "https://www.linkedin.com/in/joshua-fu/",
-                caps: { gate1: 2, gate2: 2, gate3: 2 },
-                roleDescription: "Co-marketing deals, distribution agreements, channel partnerships, strategic alliances. He is looking for win-win deals to expand market reach and sales channels.",
-                expertise: "E-commerce, Shopify, retail, marketing tech, cross-border sales",
-                whatToPropose: [
-                    "Let's do a co-marketing partnership to reach your user base.",
-                    "We propose a distribution agreement for Southeast Asia / North America.",
-                    "We want a revenue-share channel partnership in e-commerce.",
-                    "We propose a strategic alliance with clear mutual upside."
-                ]
-            },
-            chander: {
-                name: "Chander Kant",
-                role: "Technology Partnerships / Acquirer",
-                org: "K Ventures",
-                linkedIn: "https://www.linkedin.com/in/chanderkant/",
-                caps: { gate1: 3, gate2: 3, gate3: 2 },
-                roleDescription: "Technology licensing, SaaS partnerships, acquisition discussions. He is an entrepreneur who buys deep tech to integrate or flip.",
-                expertise: "Cloud infrastructure, SaaS, AI, security, M&A, tech due diligence",
-                whatToPropose: [
-                    "We propose a technology licensing deal for our cloud-native tech.",
-                    "We are seeking a strategic acquirer. Here is our tech stack and IP.",
-                    "Our AI/security tech has strong IP; let's discuss acquisition.",
-                    "Let's form a SaaS partnership that integrates with your infrastructure."
-                ]
-            }
-        };
+<h4 style="color: var(--warning); margin: 1rem 0 0.5rem; font-size: 1.1rem; font-weight: 800;">Your Focus:</h4>
+<ul class="styled-list" style="padding-left: 0;">
+<li>Deep dive on Unit Economics (CAC/LTV).</li>
+<li>Prove Scalability and GTM Strategy.</li>
+<li>Address all Gate 1 objections.</li>
+</ul>
+</div>
 
-        // Current status (FOR VISUALS ONLY) - Set the target time to the end of the game (3:30 PM)
-        const currentStatus = {
-            bankroll: 10000,
-            teams: 20,
-            // Assuming the game starts at 9:00 AM. Set the clock to run down from 3:30 PM
-            targetTime: new Date(new Date().setHours(15, 30, 0, 0)) 
-        };
+<div class="gate-step-card active-flow" style="border-color: var(--success);">
+<div class="gate-title-visual" style="color: var(--success);">🤝 Gate 3: Negotiation</div>
+<div class="gate-subtitle-visual">20-min | Goal: Close the Final Deal</div>
 
-        // Show tab function
-        function showTab(tabName, buttonElement) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
+<div class="gate-cost-payout" style="border-left: 4px solid var(--accent);">
+<span style="font-size: 1.1rem; color: var(--text-primary);">Cost: <span class="cost-amount">-US$3,000 (Entry Fee)</span></span><br>
+<span style="font-size: 1.1rem; color: var(--text-primary);">Payout: <span class="payout-amount">+US$15,000</span>, +US$10,000, or US$0</span>
+</div>
 
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(btn => btn.classList.remove('active'));
+<h4 style="color: var(--success); margin: 1rem 0 0.5rem; font-size: 1.1rem; font-weight: 800;">Your Focus:</h4>
+<ul class="styled-list" style="padding-left: 0;">
+<li>Final Deal Summary and Key Terms.</li>
+<li>Negotiate with confidence.</li>
+<li>Defend your Valuation / Pricing.</li>
+</ul>
+</div>
+</div>
 
-            document.getElementById(tabName).classList.add('active');
-            
-            if (buttonElement) {
-                buttonElement.classList.add('active');
-            } else {
-                const targetButton = document.getElementById('btn-' + tabName);
-                if (targetButton) targetButton.classList.add('active');
-            }
+<div class="alert alert-danger" style="margin-top: 2rem;">
+<strong>Critical Decision:</strong> At 2:50 PM, your buyer gathers all Gate 2 teams (2 or 3) and announces the 2 teams that advance to Gate 3. Ensure your performance merits selection!
+</div>
+</div>
+</div>
 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+<div id="buyers" class="tab-content">
+<div class="card">
+<div class="card-header">
+<div class="card-icon">👥</div>
+<div>
+<div class="card-title">Buyer Directory: Who to Sell To</div>
+<div class="card-subtitle">Match your company type to the buyer's functional role. Click a name to load their deep-dive profile.</div>
+</div>
+</div>
 
-        // Helper function for cross-linking tabs
-        function goToTab(tabName) {
-            const buttonElement = document.getElementById('btn-' + tabName);
-            if (buttonElement) {
-                showTab(tabName, buttonElement);
-            }
-        }
+<div class="buyer-directory-grid">
+<div class="buyer-card">
+<a href="javascript:void(0)" onclick="selectBuyer('johnny')" class="buyer-name-link-card">Johnny Yu ↗</a>
+<div class="buyer-role-card">CVC / Investment</div>
+<div class="buyer-focus-pill">Equity Deals</div>
+<div class="buyer-focus-pill">Series A</div>
+<div class="buyer-card-divider"></div>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">He writes big checks for Series A. Pitch investment that fits his strategic portfolio themes.</p>
+</div>
+<div class="buyer-card">
+<a href="javascript:void(0)" onclick="selectBuyer('volker')" class="buyer-name-link-card">Dr. Volker Kaese ↗</a>
+<div class="buyer-role-card">Supply Chain / Procurement</div>
+<div class="buyer-focus-pill">Supplier Partnership</div>
+<div class="buyer-focus-pill">EV Components</div>
+<div class="buyer-card-divider"></div>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">He buys parts and software that makes the supply chain efficient for mobility/automotive.</p>
+</div>
+<div class="buyer-card">
+<a href="javascript:void(0)" onclick="selectBuyer('ashley')" class="buyer-name-link-card">Ashley Hsueh ↗</a>
+<div class="buyer-role-card">Corporate Development / M&A</div>
+<div class="buyer-focus-pill">Acquisition</div>
+<div class="buyer-focus-pill">M&A Strategy</div>
+<div class="buyer-card-divider"></div>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">She is advising large corporations on who to buy or partner with. Pitch clear synergies.</p>
+</div>
+<div class="buyer-card">
+<a href="javascript:void(0)" onclick="selectBuyer('deborah')" class="buyer-name-link-card">Deborah Magid ↗</a>
+<div class="buyer-role-card">Innovation Scout / POC</div>
+<div class="buyer-focus-pill">Pilot Programs</div>
+<div class="buyer-focus-pill">Enterprise Tech</div>
+<div class="buyer-card-divider"></div>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">She is looking for new tech to test within large corporate environments (POCs).</p>
+</div>
+<div class="buyer-card">
+<a href="javascript:void(0)" onclick="selectBuyer('shafeen')" class="buyer-name-link-card">Shafeen Charania ↗</a>
+<div class="buyer-role-card">Operations / Tech Procurement</div>
+<div class="buyer-focus-pill">SaaS Tools</div>
+<div class="buyer-focus-pill">Productivity</div>
+<div class="buyer-card-divider"></div>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">He buys software to improve efficiency across multi-country operations (HR, workflow, etc.).</p>
+</div>
+<div class="buyer-card">
+<a href="javascript:void(0)" onclick="selectBuyer('josh')" class="buyer-name-link-card">Josh Fu ↗</a>
+<div class="buyer-role-card">Partnerships / Channel Development</div>
+<div class="buyer-focus-pill">Co-Marketing</div>
+<div class="buyer-focus-pill">Distribution Deals</div>
+<div class="buyer-card-divider"></div>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">He is looking for win-win deals to expand market reach and sales channels in e-commerce/retail.</p>
+</div>
+<div class="buyer-card">
+<a href="javascript:void(0)" onclick="selectBuyer('chander')" class="buyer-name-link-card">Chander Kant ↗</a>
+<div class="buyer-role-card">Technology Partnerships / Acquirer</div>
+<div class="buyer-focus-pill">Tech Licensing</div>
+<div class="buyer-focus-pill">Deep Tech M&A</div>
+<div class="buyer-card-divider"></div>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">He is an entrepreneur who buys deep tech to integrate or flip. Pitch IP and tech stack quality.</p>
+</div>
+</div>
 
-        // Timer Function (FOR VISUAL EFFECT ONLY)
-        function updateTime() {
-            const now = new Date();
-            const target = currentStatus.targetTime;
-            let diff = target - now;
+<div id="buyerProfileContainer">
+<div class="alert alert-info" style="margin-top: 2rem;">
+<strong>Instructions:</strong> Click any buyer's name above to load their deep-dive profile and see exactly what kind of transaction they are looking to buy.
+</div>
+</div>
+</div>
+</div>
 
-            if (diff <= 0) {
-                document.getElementById('statusTime').textContent = "GAME OVER";
-                return;
-            }
+<div id="winning" class="tab-content">
+<div class="card">
+<div class="card-header">
+<div class="card-icon">💰</div>
+<div>
+<div class="card-title">How to Win: The Money Model</div>
+<div class="card-subtitle">Maximize your cash by strategically earning and spending.</div>
+</div>
+</div>
 
-            const totalSeconds = Math.floor(diff / 1000);
-            const hours = Math.floor(totalSeconds / 3600);
-            const minutes = Math.floor((totalSeconds % 3600) / 60);
-            const seconds = totalSeconds % 60;
+<div class="alert alert-success">
+<strong>Max Theoretical Earnings: US$32,000 Net Profit</strong><br>
+Start US$10k + US$1k List + US$3k G1 + US$8k G2 + US$15k G3 - US$5k Total Fees. Focus on Gate 3 for the big payout.
+</div>
 
-            const timeString = [hours, minutes, seconds]
-                .map(n => n.toString().padStart(2, '0'))
-                .join(':');
+<div class="money-flow-grid-3d">
 
-            document.getElementById('statusTime').textContent = timeString;
-        }
+<div class="money-panel">
+<div class="money-header earn">✅ Ways to EARN Money</div>
+<div class="money-list">
+<div class="money-list-item"><span>Exceptional Customer List</span><span class="payout">+US$1,000</span></div>
+<div class="money-list-item"><span>Gate-1 "Interested"</span><span class="payout">+US$3,000</span></div>
+<div class="money-list-item"><span>Gate-2 "Decent"</span><span class="payout">+US$5,000</span></div>
+<div class="money-list-item"><span>Gate-2 "Strong"</span><span class="payout">+US$8,000</span></div>
+<div class="money-list-item"><span>Hot Seat Challenge Winner</span><span class="payout">+US$8,000</span></div>
+<div class="money-list-item"><span>Gate-3 "Conditional Deal"</span><span class="payout">+US$10,000</span></div>
+<div class="money-list-item"><span>Gate-3 "Deal"</span><span class="payout">+US$15,000</span></div>
+</div>
+</div>
 
-        // Logic to display a single buyer profile dynamically
-        function selectBuyer(buyerKey) {
-            const buyer = buyerData[buyerKey];
-            const container = document.getElementById('buyerProfileContainer');
+<div class="money-panel">
+<div class="money-header spend">❌ Ways to SPEND Money</div>
+<div class="money-list">
+<div class="money-list-item"><span>Incomplete Customer List</span><span class="cost">-US$1,000</span></div>
+<div class="money-list-item"><span>War Room (AM)</span><span class="cost">-US$1,000</span></div>
+<div class="money-list-item"><span>War Room (PM)</span><span class="cost">-US$1k to -US$2k</span></div>
+<div class="money-list-item"><span>Gate-1 Email Bid</span><span class="cost">-US$2k to -US$5k</span></div>
+<div class="money-list-item"><span>Gate-2 Entry Fee</span><span class="cost">-US$2,000</span></div>
+<div class="money-list-item"><span>Gate-3 Entry Fee</span><span class="cost">-US$3,000</span></div>
+<div class="money-list-item"><span>Gate-1 Buyback</span><span class="cost">-US$5,000</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-            const linkedInURL = buyer.linkedIn;
-            const linkedInLink = buyer.linkedIn ? `<a href="${linkedInURL}" target="_blank" rel="noopener noreferrer" style="color: var(--secondary); font-size: 0.9rem;"> (View LinkedIn Profile ↗)</a>` : '';
+<div id="quickref" class="tab-content">
+<div class="card">
+<div class="card-header">
+<div class="card-icon">⚡</div>
+<div>
+<div class="card-title">Startup Quick Reference Guide</div>
+<div class="card-subtitle">The entire day, summarized.</div>
+</div>
+</div>
 
-            container.innerHTML = `
-                <div class="buyer-profile-detail">
-                    <div class="buyer-detail-header">
-                        <div>
-                            <div class="buyer-role">${buyer.name}</div>
-                            <div class="buyer-org">${buyer.role} | ${buyer.org}</div>
-                        </div>
-                        <div style="text-align: right;">
-                            <div style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">Gate 1 Cap: ${buyer.caps.gate1} Teams</div>
-                            ${linkedInLink}
-                        </div>
-                    </div>
-                    
-                    <div class="buyer-key-focus">
-                        <strong>PRIMARY TRANSACTION FOCUS:</strong>
-                        <p style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-top: 0.5rem;">${buyer.roleDescription}</p>
-                    </div>
+<div class="quick-ref-grid-overhaul">
 
-                    <h4 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem;">🎯 Strategic Fit & Expertise</h4>
-                    <div class="info-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                        <div class="info-item" style="border-left-color: var(--warning); padding: 1rem;">
-                            <div class="info-label">Key Expertise</div>
-                            <div class="info-value" style="font-size: 1rem;">${buyer.expertise}</div>
-                        </div>
-                        <div class="info-item" style="border-left-color: var(--success); padding: 1rem;">
-                            <div class="info-label">What He Buys</div>
-                            <div class="info-value" style="font-size: 1.1rem;">${buyer.role.split(' / ').join(' or ')}</div>
-                        </div>
-                    </div>
+<div class="quick-ref-card-overhaul" style="grid-column: 1 / span 1;">
+<div class="quick-ref-title-overhaul" style="color: var(--warning);">🎯 Your Mission & Strategy</div>
+<ul class="quick-ref-content-list styled-list" style="padding-left: 0;">
+<li><strong>You're SELLING or PARTNERING.</strong> Propose a real transaction to a buyer, partner, or acquirer.</li>
+<li><strong>War Room (Ken Huang):</strong> Get 1-on-1 strategy help. Use it for targeting, email writing, or negotiation prep.</li>
+<li><strong>AM: -US$1,000</strong> | <strong>PM: -US$1k-US$2k</strong> (Find Ken in the War Room)</li>
+<li><strong>Money Tips - Start:</strong> US$10,000</li>
+<li><strong>Money Tips - Earn:</strong> Exceptional List (+US$1k), Gates (+US$3k to +US$15k), Hot Seat (+US$8k)</li>
+<li><strong>Money Tips - Spend:</strong> War Room (-US$1k), Bids (-US$2k+), Gate Entries (-US$2k, -US$3k), Buyback (-US$5k)</li>
+</ul>
+</div>
 
-                    <h4 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">📝 Examples of Winning Proposals</h4>
-                    <ul class="styled-list">
-                        ${buyer.whatToPropose.map(item => `<li>${item}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-            
-            // Scroll to the profile view for better UX
-            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+<div class="quick-ref-card-overhaul" style="border-left: 4px solid var(--accent);">
+<div class="quick-ref-title-overhaul" style="color: var(--accent);">⏰ Key Deadlines</div>
+<ul class="quick-ref-content-list styled-list" style="padding-left: 0;">
+<li><strong>10:45 AM:</strong> Customer List MUST be uploaded to G-Drive.</li>
+<li><strong>11:30 AM:</strong> ONE email to ONE buyer must be sent.</li>
+<li><strong>14:50 PM:</strong> Gate 2 results announced.</li>
+<li><strong>15:20 PM:</strong> Final Count and Winner declared.</li>
+</ul>
+</div>
+
+<div class="quick-ref-card-overhaul" style="border-left: 4px solid var(--success);">
+<div class="quick-ref-title-overhaul" style="color: var(--success);">👥 Buyer & Contact Directory</div>
+<ul class="quick-ref-content-list styled-list" style="line-height: 2; padding-left: 0;">
+<li><strong><a href="https://www.linkedin.com/in/johnny-yu-21b36128/" target="_blank" rel="noopener noreferrer" class="buyer-dir-link">Johnny ↗:</a></strong> Investment (Equity)</li>
+<li><strong><a href="https://www.linkedin.com/in/volkerkaese/" target="_blank" rel="noopener noreferrer" class="buyer-dir-link">Volker ↗:</a></strong> Supply Chain (Supplier Deal)</li>
+<li><strong><a href="https://www.linkedin.com/in/ashleyhsueh/" target="_blank" rel="noopener noreferrer" class="buyer-dir-link">Ashley ↗:</a></strong> M&A (Acquisition)</li>
+<li><strong>Kyle:</strong> Scoring & Leaderboard</li>
+<li><strong>Jade:</strong> Cash, Payments, G-Drive Links</li>
+<li><strong>Volker H:</strong> MC & Rules</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="contacts" class="tab-content">
+<div class="card">
+<div class="card-header">
+<div class="card-icon">📞</div>
+<div>
+<div class="card-title">Operations Team Contacts</div>
+<div class="card-subtitle">Your support crew for the day.</div>
+</div>
+</div>
+
+<div class="contact-grid">
+<div class="contact-card">
+<div class="contact-role">Scorekeeper</div>
+<div class="contact-name">Kyle</div>
+<div class="contact-email"><a href="mailto:yh@mvl.biz">yh@mvl.biz</a></div>
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Leaderboard updates, timing questions, slot tracking</p>
+</div>
+
+<div class="contact-card">
+<div class="contact-role">Operations / Cash</div>
+<div class="contact-name">Jade</div>
+<div class="contact-email"><a href="mailto:jc@mvl.biz">jc@mvl.biz</a></div>
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Cash distribution, all payments, fees, G-Drive links</p>
+</div>
+
+<div class="contact-card">
+<div class="contact-role">MC / Rules</div>
+<div class="contact-name">Volker H.</div>
+<div class="contact-email"><a href="mailto:vh@mvl.biz">vh@mvl.biz</a></div>
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Event coordination, rules clarification, announcements</p>
+</div>
+
+<div class="contact-card">
+<div class="contact-role">War Room / Hot Seat</div>
+<div class="contact-name">Ken Huang</div>
+<div class="contact-email"><a href="mailto:ken@mvl.biz">ken@mvl.biz</a></div>
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Strategic consulting, Hot Seat judge</p>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+
+<script>
+// Buyer Data (SOURCE OF TRUTH)
+const buyerData = {
+johnny: {
+name: "Johnny Yu",
+role: "CVC / Investment",
+org: "Mosaic Venture Lab",
+linkedIn: "https://www.linkedin.com/in/johnny-yu-21b36128/",
+caps: { gate1: 3, gate2: 3, gate3: 2 },
+roleDescription: "Equity stakes in startups that fit strategic portfolio themes. He writes big checks for Series A.",
+expertise: "Semiconductors, smart mobility, biotech, venture capital",
+whatToPropose: [
+"We're raising Series A. Here's our traction and unit economics.",
+"We seek a strategic investment to fit Mosaic's mobility portfolio.",
+"We need cross-border capital to expand from Taiwan to the US.",
+"We are proposing an equity deal with a clear exit potential."
+]
+},
+volker: {
+name: "Dr. Volker Kaese",
+role: "Supply Chain / Procurement",
+org: "Ingenev Mobility",
+linkedIn: "https://www.linkedin.com/in/volkerkaese/",
+caps: { gate1: 3, gate2: 3, gate3: 2 },
+roleDescription: "Supplier partnerships, components, manufacturing services, vendor agreements. He buys parts and software that makes the supply chain efficient.",
+expertise: "Automotive, EV batteries, mobility, supply chain, materials",
+whatToPropose: [
+"We want to be your Tier 1 supplier. Here is our pilot order proposal.",
+"We propose a component supply agreement for your EV applications.",
+"We offer manufacturing services and can prove our scalability.",
+"Our AI supply chain software has clear ROI; let's run a pilot."
+]
+},
+ashley: {
+name: "Ashley Hsueh",
+role: "Corporate Development / M&A",
+org: "Bain & Company",
+linkedIn: "https://www.linkedin.com/in/ashleyhsueh/",
+caps: { gate1: 3, gate2: 3, gate3: 2 },
+roleDescription: "Acquisitions, strategic M&A deals, corporate partnerships. She is advising large corporations on who to buy or partner with.",
+expertise: "Technology, cloud services, performance improvement, strategy",
+whatToPropose: [
+"We seek a strategic acquisition. Here is our valuation and synergy model.",
+"We are proposing an M&A deal to expand into North America or Asia.",
+"Our tech is accretive to your cloud division; let's discuss acquisition.",
+"We propose a corporate partnership for large enterprises."
+]
+},
+deborah: {
+name: "Deborah Magid",
+role: "Innovation Scout / POC",
+org: "NextStar Venture Partners",
+linkedIn: "https://www.linkedin.com/in/deborah-magid-b5318/",
+caps: { gate1: 3, gate2: 3, gate3: 2 },
+roleDescription: "Pilot programs, proof-of-concept projects, technology partnerships. She is looking for new tech to test within large corporate environments.",
+expertise: "Enterprise software, AI, IoT, cybersecurity, sustainability",
+whatToPropose: [
+"Let's run a 90-day POC with our enterprise security/AI tool.",
+"We propose a 6-month pilot with 3 of your corporate clients.",
+"Our IoT platform has a measurable ROI; let's start a pilot.",
+"We are looking for an innovation partnership with an enterprise."
+]
+},
+shafeen: {
+name: "Shafeen Charania",
+role: "Operations / Technology Procurement",
+org: "Fluency Pte Ltd.",
+linkedIn: "https://www.linkedin.com/in/shafeen/",
+caps: { gate1: 3, gate2: 3, gate3: 2 },
+roleDescription: "Operational SaaS tools, productivity platforms, business software. He buys software to improve efficiency across multi-country operations.",
+expertise: "Gaming, edtech, operations, multi-country scaling, partnerships",
+whatToPropose: [
+"Our SaaS tool automates HR/finance. Let's do a 3-month trial.",
+"This platform has a clear time/cost ROI; we want to sell it to your ops team.",
+"This is a workflow tool for distributed teams with existing integrations.",
+"We propose an operational service with 90-day ROI proof."
+]
+},
+josh: {
+name: "Josh Fu",
+role: "Partnerships / Channel Development",
+org: "Akohub",
+linkedIn: "https://www.linkedin.com/in/joshua-fu/",
+caps: { gate1: 2, gate2: 2, gate3: 2 },
+roleDescription: "Co-marketing deals, distribution agreements, channel partnerships, strategic alliances. He is looking for win-win deals to expand market reach and sales channels.",
+expertise: "E-commerce, Shopify, retail, marketing tech, cross-border sales",
+whatToPropose: [
+"Let's do a co-marketing partnership to reach your user base.",
+"We propose a distribution agreement for Southeast Asia / North America.",
+"We want a revenue-share channel partnership in e-commerce.",
+"We propose a strategic alliance with clear mutual upside."
+]
+},
+chander: {
+name: "Chander Kant",
+role: "Technology Partnerships / Acquirer",
+org: "K Ventures",
+linkedIn: "https://www.linkedin.com/in/chanderkant/",
+caps: { gate1: 3, gate2: 3, gate3: 2 },
+roleDescription: "Technology licensing, SaaS partnerships, acquisition discussions. He is an entrepreneur who buys deep tech to integrate or flip.",
+expertise: "Cloud infrastructure, SaaS, AI, security, M&A, tech due diligence",
+whatToPropose: [
+"We propose a technology licensing deal for our cloud-native tech.",
+"We are seeking a strategic acquirer. Here is our tech stack and IP.",
+"Our AI/security tech has strong IP; let's discuss acquisition.",
+"Let's form a SaaS partnership that integrates with your infrastructure."
+]
+}
+};
+
+// Current status (FOR VISUALS ONLY) - Set the target time to the end of the game (3:30 PM)
+const currentStatus = {
+bankroll: 10000,
+teams: 20,
+// Assuming the game starts at 9:00 AM. Set the clock to run down from 3:30 PM
+targetTime: new Date(new Date().setHours(15, 30, 0, 0)) 
+};
+
+// Show tab function
+function showTab(tabName, buttonElement) {
+const tabs = document.querySelectorAll('.tab-content');
+tabs.forEach(tab => tab.classList.remove('active'));
+
+const buttons = document.querySelectorAll('.tab-button');
+buttons.forEach(btn => btn.classList.remove('active'));
+
+document.getElementById(tabName).classList.add('active');
+
+if (buttonElement) {
+buttonElement.classList.add('active');
+} else {
+const targetButton = document.getElementById('btn-' + tabName);
+if (targetButton) targetButton.classList.add('active');
+}
+
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Helper function for cross-linking tabs
+function goToTab(tabName) {
+const buttonElement = document.getElementById('btn-' + tabName);
+if (buttonElement) {
+showTab(tabName, buttonElement);
+}
+}
+
+// Timer Function (FOR VISUAL EFFECT ONLY)
+function updateTime() {
+const now = new Date();
+const target = currentStatus.targetTime;
+let diff = target - now;
+
+if (diff <= 0) {
+document.getElementById('statusTime').textContent = "GAME OVER";
+return;
+}
+
+const totalSeconds = Math.floor(diff / 1000);
+const hours = Math.floor(totalSeconds / 3600);
+const minutes = Math.floor((totalSeconds % 3600) / 60);
+const seconds = totalSeconds % 60;
+
+const timeString = [hours, minutes, seconds]
+.map(n => n.toString().padStart(2, '0'))
+.join(':');
+
+document.getElementById('statusTime').textContent = timeString;
+}
+
+// Logic to display a single buyer profile dynamically
+function selectBuyer(buyerKey) {
+const buyer = buyerData[buyerKey];
+const container = document.getElementById('buyerProfileContainer');
+
+const linkedInURL = buyer.linkedIn;
+const linkedInLink = buyer.linkedIn ? `<a href="US${linkedInURL}" target="_blank" rel="noopener noreferrer" style="color: var(--secondary); font-size: 0.9rem;"> (View LinkedIn Profile ↗)</a>` : '';
+
+container.innerHTML = `
+<div class="buyer-profile-detail">
+<div class="buyer-detail-header">
+<div>
+<div class="buyer-role">US${buyer.name}</div>
+<div class="buyer-org">US${buyer.role} | US${buyer.org}</div>
+</div>
+<div style="text-align: right;">
+<div style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">Gate 1 Cap: US${buyer.caps.gate1} Teams</div>
+US${linkedInLink}
+</div>
+</div>
+
+<div class="buyer-key-focus">
+<strong>PRIMARY TRANSACTION FOCUS:</strong>
+<p style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-top: 0.5rem;">US${buyer.roleDescription}</p>
+</div>
+
+<h4 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem;">🎯 Strategic Fit & Expertise</h4>
+<div class="info-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+<div class="info-item" style="border-left-color: var(--warning); padding: 1rem;">
+<div class="info-label">Key Expertise</div>
+<div class="info-value" style="font-size: 1rem;">US${buyer.expertise}</div>
+</div>
+<div class="info-item" style="border-left-color: var(--success); padding: 1rem;">
+<div class="info-label">What He Buys</div>
+<div class="info-value" style="font-size: 1.1rem;">US${buyer.role.split(' / ').join(' or ')}</div>
+</div>
+</div>
+
+<h4 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">📝 Examples of Winning Proposals</h4>
+<ul class="styled-list">
+US${buyer.whatToPropose.map(item => `<li>US${item}</li>`).join('')}
+</ul>
+</div>
+`;
+
+// Scroll to the profile view for better UX
+container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Calculate a target time 6.5 hours from now for a realistic demo if running live
-            currentStatus.targetTime = new Date(new Date().getTime() + (6 * 60 * 60 * 1000) + (30 * 60 * 1000));
-            
-            // Set initial bankroll/teams status
-            document.getElementById('statusBankroll').textContent = `$${currentStatus.bankroll.toLocaleString()}`;
-            document.getElementById('statusTeams').textContent = `${currentStatus.teams} / 20`;
-            
-            // Start the timer
-            setInterval(updateTime, 1000);
-            updateTime(); // Initial call
-        });
+// Initialize on load
+document.addEventListener('DOMContentLoaded', function() {
+// Calculate a target time 6.5 hours from now for a realistic demo if running live
+currentStatus.targetTime = new Date(new Date().getTime() + (6 * 60 * 60 * 1000) + (30 * 60 * 1000));
 
-        // Add keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            const tabs = Array.from(document.querySelectorAll('.nav-tabs-inner .tab-button'));
-            const activeIndex = tabs.findIndex(tab => tab.classList.contains('active'));
+// Set initial bankroll/teams status
+document.getElementById('statusBankroll').textContent = `US$US${currentStatus.bankroll.toLocaleString()}`;
+document.getElementById('statusTeams').textContent = `US${currentStatus.teams} / 20`;
 
-            if (e.key === 'ArrowRight' && activeIndex !== -1 && activeIndex < tabs.length - 1) {
-                tabs[activeIndex + 1].click();
-            } else if (e.key === 'ArrowLeft' && activeIndex > 0) {
-                tabs[activeIndex - 1].click();
-            }
-        });
-    </script>
+// Start the timer
+setInterval(updateTime, 1000);
+updateTime(); // Initial call
+});
+
+// Add keyboard navigation
+document.addEventListener('keydown', function(e) {
+const tabs = Array.from(document.querySelectorAll('.nav-tabs-inner .tab-button'));
+const activeIndex = tabs.findIndex(tab => tab.classList.contains('active'));
+
+if (e.key === 'ArrowRight' && activeIndex !== -1 && activeIndex < tabs.length - 1) {
+tabs[activeIndex + 1].click();
+} else if (e.key === 'ArrowLeft' && activeIndex > 0) {
+tabs[activeIndex - 1].click();
+}
+});
+</script>
 </body>
 </html>
+
